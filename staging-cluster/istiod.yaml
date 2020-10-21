@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: istiod
+  namespace: gotk-system
+spec:
+  interval: 10m0s
+  path: ./manifests/charts/istio-control/istio-discovery
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: istio
+  validation: client
+  targetNamespace: istio-system
+
