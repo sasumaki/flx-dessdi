@@ -5,6 +5,8 @@ metadata:
   name: istio-operator
   namespace: gotk-system
 spec:
+  dependsOn:
+    - name: istio-base
   chart:
     spec:
       chart: ./manifests/charts/istio-operator
@@ -13,4 +15,3 @@ spec:
         name: istio
   interval: 10m0s
   targetNamespace: istio-system
-
