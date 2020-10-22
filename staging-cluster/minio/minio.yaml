@@ -15,6 +15,11 @@ spec:
   valuesFrom:
   - kind: Secret
     name: minio-secret
-    valuesKey: stringData
-    targetPath: existingSecret
+    valuesKey: accessKey
+    targetPath: accessKey
+  - kind: Secret
+    name: minio-secret
+    valuesKey: secretKey
+    targetPath: secretKey
+
 
