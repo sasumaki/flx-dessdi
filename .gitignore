@@ -1,1 +1,4 @@
 spells.txt
+MNIST_data
+.vscode
+staging-cluster/seldon/seldon-chart.yaml
