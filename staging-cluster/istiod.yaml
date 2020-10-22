@@ -5,8 +5,6 @@ metadata:
   name: istiod
   namespace: gotk-system
 spec:
-  dependsOn:
-    - name: istio-base
   interval: 10m0s
   path: ./manifests/charts/istio-control/istio-discovery
   prune: true
