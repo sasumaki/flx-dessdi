@@ -1,2 +1,4 @@
 istio
 spells.txt
+staging-cluster/istio-helm-chart.yaml
+staging-cluster/istio-helm-source.yaml
