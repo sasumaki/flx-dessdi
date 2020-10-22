@@ -1,0 +1,3 @@
+minio:
+  accessKey: barbeerhops # TODO: seal something real
+  secretKey: bigsecret
