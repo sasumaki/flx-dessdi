@@ -14,5 +14,4 @@ spec:
     kind: GitRepository
     name: istio
   validation: client
-  targetNamespace: istio-system
 
