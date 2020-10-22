@@ -12,6 +12,9 @@ spec:
         kind: GitRepository
         name: minio
   interval: 10m0s
+  values:
+    buckets:
+      - models
   valuesFrom:
   - kind: Secret
     name: minio-secret
