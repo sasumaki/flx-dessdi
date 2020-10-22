@@ -12,3 +12,9 @@ spec:
         kind: GitRepository
         name: minio
   interval: 10m0s
+  valuesFrom:
+  - kind: Secret
+    name: minio-secret
+    valuesKey: stringData
+    targetPath: existingSecret
+
