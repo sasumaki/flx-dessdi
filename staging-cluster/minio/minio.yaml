@@ -14,7 +14,9 @@ spec:
   interval: 10m0s
   values:
     buckets:
-      - models
+      - name: models
+        policy: public
+        purge: false
   valuesFrom:
   - kind: Secret
     name: minio-secret
