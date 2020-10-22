@@ -12,3 +12,4 @@ spec:
         kind: GitRepository
         name: istio
   interval: 10m0s
+  prune: true

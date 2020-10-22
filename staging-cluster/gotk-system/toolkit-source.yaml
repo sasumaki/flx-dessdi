@@ -1,7 +1,6 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  creationTimestamp: null
   name: gotk-system
   namespace: gotk-system
 spec:
