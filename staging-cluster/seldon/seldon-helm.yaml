@@ -17,6 +17,5 @@ spec:
       enabled: true
     usageMetrics:
       enabled: true
-  targetNamespace: seldon-system
 
 
