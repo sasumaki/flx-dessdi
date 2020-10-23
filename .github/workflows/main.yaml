@@ -12,7 +12,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-      run: ls -la
+    - run: ls -la
 
     - name: Push to Docker Hub
       uses: docker/build-push-action@v2
