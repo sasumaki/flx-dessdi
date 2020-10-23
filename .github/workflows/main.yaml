@@ -34,7 +34,7 @@ jobs:
       run: echo "::set-output name=sha7::$(echo ${{ github.sha }} | cut -c1-7)"
 
     - 
-      run: cd ./staging_cluster/mnist
+      run: cd ./staging-cluster/mnist
     - 
       name: Set up Kustomize
       run: |-
