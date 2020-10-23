@@ -8,4 +8,4 @@ resources:
 images:
 - name: MODEL_IMAGE
   newName: sasumaki/mnist
-  newTag: sha-414b34a
+  newTag: sha-6680378
