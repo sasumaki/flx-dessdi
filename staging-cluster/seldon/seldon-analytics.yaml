@@ -1,0 +1,17 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: seldon-core-analytics
+  namespace: gotk-system
+spec:
+  chart:
+    spec:
+      chart: seldon-core-operator
+      sourceRef:
+        kind: HelmRepository
+        name: seldonio
+        namespace: gotk-system
+  interval: 10m0s
+  targetNamespace: seldon-system
+
