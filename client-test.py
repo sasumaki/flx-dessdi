@@ -14,7 +14,6 @@ X_test = np.vstack([img.reshape(-1,) for img in mnist.test.images])
 y_test = mnist.test.labels
 
 sc = SeldonClient(deployment_name="mnist-model",namespace="seldon-system",gateway_endpoint="localhost:8081")
-print(sc)
 
 data = random.choice(X_test)
 plt.imshow(data.reshape(28,28))

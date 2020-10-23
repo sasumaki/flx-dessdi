@@ -9,3 +9,5 @@ images:
 - name: MODEL_IMAGE
   newName: sasumaki/mnist
   newTag: sha-6680378
+
+
