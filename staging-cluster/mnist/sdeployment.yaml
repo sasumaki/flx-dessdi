@@ -10,7 +10,7 @@ spec:
     - spec:
         containers:
         - name: mnist
-          image: sasumaki/mnist:29
+          image: MODEL_IMAGE
           env:
             - name: AWS_ACCESS_KEY_ID # ENV name passed to container
               valueFrom:

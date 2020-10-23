@@ -1,0 +1,23 @@
+name: Release application
+
+on:
+  push:
+
+jobs:
+  build-publish-deploy:
+    name: Build, Publish and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Push to Docker Hub
+      uses: docker/build-push-action@v1
+      with:
+        context: ./mnist
+        file: ./mnist/Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: sasumaki/mnist
+        tag_with_ref: true
