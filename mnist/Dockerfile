@@ -3,7 +3,7 @@ COPY . /app
 WORKDIR /app
 RUN apt-get update -y && apt-get install libgl1-mesa-glx -y
 RUN apt-get install libglib2.0-0 -y
-
+RUN ls -la
 RUN pip install -r requirements.txt
 EXPOSE 5000
 
