@@ -7,4 +7,5 @@ resources:
 
 images:
 - name: MODEL_IMAGE
-  newName: sasumaki/mnist:29
+  newName: sasumaki/mnist
+  newTag: sha-fc48f7e
