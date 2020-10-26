@@ -12,8 +12,6 @@ spec:
     kind: GitRepository
     name: mnist
   dependsOn: 
-    - name: istio-ingress
-      namespace: istio-system
     - name: istiod
       namespace: istio-system
     - name: seldon-operator
