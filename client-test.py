@@ -13,13 +13,15 @@ y_train = mnist.train.labels
 X_test = np.vstack([img.reshape(-1,) for img in mnist.test.images])
 y_test = mnist.test.labels
 
-sc = SeldonClient(deployment_name="mnist-model",namespace="seldon-system",gateway_endpoint="localhost:8081")
+sc = SeldonClient(deployment_name="mnist-model", namespace="seldon-system", gateway_endpoint="localhost:8081", gateway="istio")
+print(sc.config)
 for i in range(0, 1000):
   data = random.choice(X_test)
   # plt.imshow(data.reshape(28,28))
   # plt.colorbar()
   # plt.show()
   r = sc.predict(data=data, gateway="istio",transport="rest")
+  print(r.msg)
   assert(r.success==True)
 
   res = r.response['data']['tensor']['values']
