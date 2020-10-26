@@ -11,7 +11,12 @@ spec:
   sourceRef:
     kind: GitRepository
     name: mnist
+  depends_on: 
+    - name: istio-base
+    - name: istio-ingress
+      namespace: istio-system
+    - name: seldon-operator
+      namespace: seldon-system
   validation: client
   targetNamespace: seldon-system
-  releaseName: mnist-model
 
