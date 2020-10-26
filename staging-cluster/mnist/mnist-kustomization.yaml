@@ -13,7 +13,8 @@ spec:
     name: mnist
   dependsOn: 
     - name: istiod
-    - name: seldon-operator
+    - name: seldon-controller-manager
+      namespace: seldon-system
   validation: client
   targetNamespace: seldon-system
 
