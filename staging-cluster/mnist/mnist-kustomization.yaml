@@ -13,6 +13,7 @@ spec:
     name: mnist
   dependsOn: 
     - name: istio-base
+      namespace: istio-system
     - name: istio-ingress
       namespace: istio-system
     - name: seldon-operator
