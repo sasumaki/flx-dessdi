@@ -4,3 +4,4 @@ MNIST_data
 staging-cluster/seldon/seldon-chart.yaml
 kustomize
 models/*
+spellbook.txt
