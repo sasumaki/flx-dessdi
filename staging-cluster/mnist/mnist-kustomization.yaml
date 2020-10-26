@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: mnist
-  depends_on: 
+  dependsOn: 
     - name: istio-base
     - name: istio-ingress
       namespace: istio-system
