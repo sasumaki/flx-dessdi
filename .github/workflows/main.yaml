@@ -27,7 +27,7 @@ jobs:
         . <(gotk completion bash)
     
     - name: env
-      run: 'echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV'
+      run: echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
     - name: bootstrap
       run: gotk bootstrap github --owner=sasumaki --repository=flx-dessdi --branch=${{ steps.extract_branch.outputs.branch }} --path=staging-cluster
