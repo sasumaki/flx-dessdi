@@ -20,12 +20,19 @@ jobs:
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: extract_branch
-
+      
+    - name: export github stuff
+      run: |
+        export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+        export GITHUB_USER=${{ secrets.GITHUB_USER }}
     - name: install gotk
       run: |
         curl -s https://toolkit.fluxcd.io/install.sh | bash
         . <(gotk completion bash)
-
+    
+    - name: bootstrap gotk
+      run: |
+        echo ${{ steps.extract_branch.outputs.branch }}
         gotk bootstrap github \
           --owner=sasumaki \
           --repository=flx-dessdi \
