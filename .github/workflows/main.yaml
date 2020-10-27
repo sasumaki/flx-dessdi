@@ -1,0 +1,33 @@
+name: "Create cluster using KinD"
+on: [pull_request, push]
+
+jobs:
+  kind:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: engineerd/setup-kind@v0.4.0
+      with:
+          version: "v0.7.0"
+    - name: Testing
+      run: |
+        kubectl cluster-info
+        kubectl get pods -n kube-system
+        echo "current-context:" $(kubectl config current-context)
+        echo "environment-kubeconfig:" ${KUBECONFIG}
+
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+
+    - name: install gotk
+      run: |
+        curl -s https://toolkit.fluxcd.io/install.sh | bash
+        . <(gotk completion bash)
+
+        gotk bootstrap github \
+          --owner=sasumaki \
+          --repository=flx-dessdi \
+          --branch=${{ steps.extract_branch.outputs.branch }} \
+          --path=staging-cluster
