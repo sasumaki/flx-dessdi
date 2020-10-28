@@ -5,6 +5,8 @@ metadata:
   name: minio
   namespace: gotk-system
 spec:
+  dependsOn:
+    - name: sealed-secrets
   chart:
     spec:
       chart: ./minio
