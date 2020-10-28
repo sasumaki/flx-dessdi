@@ -7,6 +7,6 @@ metadata:
 spec:
   interval: 30s
   ref:
-    branch: main
+    branch: staging
   url: https://github.com/sasumaki/mnist
 
