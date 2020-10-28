@@ -13,5 +13,6 @@ spec:
     name: mnist
   dependsOn: 
     - name: istiod
+    - name: sealed-secrets
   validation: client
 
