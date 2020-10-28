@@ -28,7 +28,7 @@ jobs:
 
     - name: bootstrap gotk
       run: |
-        GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} gotk bootstrap github \
+        GITHUB_TOKEN=${{ secrets.GH_TOKEN }} gotk bootstrap github \
           --owner=sasumaki \
           --repository=flx-dessdi \
           --branch=${{ steps.extract_branch.outputs.branch }} \
