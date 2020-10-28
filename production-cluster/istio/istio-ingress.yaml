@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: istio-ingress
+  namespace: gotk-system
+spec:
+  chart:
+    spec:
+      chart: ./manifests/charts/gateways/istio-ingress
+      sourceRef:
+        kind: GitRepository
+        name: istio
+  interval: 10m0s
+  targetNamespace: istio-system
