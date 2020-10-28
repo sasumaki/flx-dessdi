@@ -5,3 +5,4 @@ staging-cluster/seldon/seldon-chart.yaml
 kustomize
 models/*
 spellbook.txt
+production-cluster/mnist/deployment-secret.yaml
