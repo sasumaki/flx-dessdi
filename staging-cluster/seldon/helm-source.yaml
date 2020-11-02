@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
   name: seldonio
-  namespace: gotk-system
+  namespace: flux-system
 spec:
   url: https://storage.googleapis.com/seldon-charts
   interval: 10m
