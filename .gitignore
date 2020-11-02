@@ -7,3 +7,6 @@ models/*
 spellbook.txt
 production-cluster/mnist/deployment-secret.yaml
 staging-cluster/minio/minio-secret.yaml
+sekrits/unsealed
+sekrits/unsealed/deployment-secret.yaml
+sekrits/unsealed/minio-secret.yaml
