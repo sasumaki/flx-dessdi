@@ -6,3 +6,4 @@ kustomize
 models/*
 spellbook.txt
 production-cluster/mnist/deployment-secret.yaml
+staging-cluster/minio/minio-secret.yaml
