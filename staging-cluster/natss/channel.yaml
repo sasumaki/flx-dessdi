@@ -8,8 +8,10 @@ spec:
   interval: 10m0s
   path: ./config/300-nats-channel.yaml
   prune: true
+  dependsOn: 
+    - name: nats-streaming
   sourceRef:
     kind: GitRepository
-    name: nats
+    name: natss
   validation: client
 
