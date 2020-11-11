@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./config/300-nats-channel.yaml
+  path: ./config/300-natss-channel.yaml
   prune: true
   dependsOn: 
     - name: nats-streaming
