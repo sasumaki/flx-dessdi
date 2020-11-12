@@ -402,7 +402,7 @@ spec:
                   type: array
                   description: "The list of subscribers that have expressed interest in receiving events from this channel."
                   items:
-                    type: array
+                    type: object
                     required:
                       - uid
                     properties:
