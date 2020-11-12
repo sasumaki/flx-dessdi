@@ -1,12 +1,4 @@
 apiVersion: eventing.knative.dev/v1
 kind: Broker
 metadata:
-  annotations:
-    eventing.knative.dev/broker.class: MTChannelBasedBroker
   name: default
-spec:
-  config:
-    apiVersion: v1
-    kind: ConfigMap
-    name: nats-channel
-    namespace: knative-eventing

@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nats-channel
+  name: default-ch-webhook
   namespace: knative-eventing
 data:
-  channelTemplateSpec: |
-    apiVersion: messaging.knative.dev/v1alpha1
-    kind: NatssChannel
-  
+  # Configuration for defaulting channels that do not specify CRD implementations.
+  default-ch-config: |
+    clusterDefault:
+      apiVersion: messaging.knative.dev/v1beta1
+      kind: NatsChannel
