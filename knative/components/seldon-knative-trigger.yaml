@@ -9,7 +9,4 @@ spec:
     attributes:
       type: seldon.mnist-model.seldon-system.request
   subscriber:
-    ref:
-      apiVersion:  serving.knative.dev/v1alpha1
-      kind: Service
-      name: message-dumper
+    uri: http://message-dumper.seldon-system.example.com
