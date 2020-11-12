@@ -6,7 +6,7 @@ metadata:
 spec:
   broker: default
   filter:
-    sourceAndType:
+    attributes:
       type: io.seldon.serving.inference.request
   subscriber:
     uri: http://message-dumper.seldon-system.example.com
