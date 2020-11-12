@@ -8,4 +8,4 @@ data:
   default-ch-config: |
     clusterDefault:
       apiVersion: messaging.knative.dev/v1beta1
-      kind: NatsChannel
+      kind: NatssChannel
