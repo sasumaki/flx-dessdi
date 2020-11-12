@@ -2,3 +2,4 @@ apiVersion: messaging.knative.dev/v1alpha1
 kind: NatssChannel
 metadata:
   name: nats-channel
+  namespace: knative-eventing

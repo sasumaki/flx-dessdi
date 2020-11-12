@@ -4,10 +4,10 @@ metadata:
   annotations:
     eventing.knative.dev/broker.class: MTChannelBasedBroker
   name: default
-  namespace: default
+  namespace: knative-eventing
 spec:
   config:
     apiVersion: v1
     kind: ConfigMap
     name: nats-channel
-    namespace: default
+    namespace: knative-eventing
