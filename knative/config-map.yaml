@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nats-channel
-  namespace: default
+  namespace: knative-eventing
 data:
   channelTemplateSpec: |
     apiVersion: messaging.knative.dev/v1beta1
