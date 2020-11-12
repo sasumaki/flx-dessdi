@@ -6,13 +6,7 @@ resources:
   - ./namespace.yaml
   - ./serving.yaml
   - ./eventing.yaml
-  - ./channel.yaml
-  - ./broker.yaml
-  - ./message-dump.yaml
-  - ./seldon-knative-trigger.yaml
-
-patches:
-  - path: ./config-map.yaml
-    target:
-      kind: ConfigMap
-      name: default-ch-webhook
+  # - ./channel.yaml
+  # - ./broker.yaml
+  # - ./message-dump.yaml
+  # - ./seldon-knative-trigger.yaml
