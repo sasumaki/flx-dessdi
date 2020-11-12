@@ -9,4 +9,4 @@ spec:
     apiVersion: v1
     kind: ConfigMap
     name: nats-streaming
-    namespace: natss
+    namespace: knative-eventing
