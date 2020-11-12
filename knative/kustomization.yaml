@@ -4,7 +4,6 @@ resources:
   - https://github.com/knative/eventing/releases/download/v0.18.0/eventing-core.yaml
   - https://github.com/knative/serving/releases/download/v0.18.0/serving-core.yaml
   - https://github.com/knative/eventing/releases/download/v0.18.0/mt-channel-broker.yaml
-  - https://raw.githubusercontent.com/knative-sandbox/eventing-natss/release-0.18/config/300-natss-channel.yaml
   - ./config-map.yaml
   - ./cluster-role.yaml
   - ./channel.yaml
