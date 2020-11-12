@@ -9,6 +9,7 @@ spec:
       type: seldon.mnist-model.seldon-system.request
   subscriber:
     ref:
-      apiVersion: machinelearning.seldon.io/v1
-      kind: SeldonDeployment
-      name: mnist-model
+      apiVersion:  serving.knative.dev/v1alpha1
+      kind: Service
+      name: message-dumper
+      namespace: knative-eventing
