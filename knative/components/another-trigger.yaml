@@ -7,6 +7,6 @@ spec:
   broker: default
   filter:
     sourceAndType:
-      - type: io.seldon.serving.inference.request
+      type: io.seldon.serving.inference.request
   subscriber:
     uri: http://message-dumper.seldon-system.example.com

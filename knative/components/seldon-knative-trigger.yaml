@@ -7,6 +7,6 @@ spec:
   broker: default
   filter:
     attributes:
-      - type: seldon.mnist-model.seldon-system.request
+      type: seldon.mnist-model.seldon-system.request
   subscriber:
     uri: http://message-dumper.seldon-system.example.com
