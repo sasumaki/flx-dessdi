@@ -5,9 +5,13 @@ resources:
   - https://github.com/knative/serving/releases/download/v0.18.0/serving-core.yaml
   - https://github.com/knative/eventing/releases/download/v0.18.0/mt-channel-broker.yaml
   - https://raw.githubusercontent.com/knative/serving/release-0.18/third_party/net-istio.yaml
-  - ./config-map.yaml
   - ./channel.yaml
   - ./broker.yaml
   - ./message-dump.yaml
   - ./seldon-knative-trigger.yaml
-  
+
+patches:
+  - path: ./config-map.yaml
+    target:
+      kind: ConfigMap
+      name: default-ch-webhook
