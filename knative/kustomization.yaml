@@ -5,7 +5,6 @@ resources:
   - https://github.com/knative/serving/releases/download/v0.18.0/serving-core.yaml
   - https://github.com/knative/eventing/releases/download/v0.18.0/mt-channel-broker.yaml
   - ./config-map.yaml
-  - ./cluster-role.yaml
   - ./channel.yaml
   - ./broker.yaml
   - ./message-dump.yaml
