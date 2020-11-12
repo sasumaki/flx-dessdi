@@ -4,6 +4,7 @@ metadata:
   annotations:
     eventing.knative.dev/broker.class: MTChannelBasedBroker
   name: default
+  namespace: knative-eventing
 spec:
   config:
     apiVersion: v1
