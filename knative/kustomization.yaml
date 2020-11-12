@@ -9,3 +9,4 @@ resources:
   - https://raw.githubusercontent.com/knative-sandbox/eventing-natss/release-0.18/config/300-natss-channel.yaml
   - ./config-map.yaml
   - ./channel.yaml
+  - ./broker.yaml
