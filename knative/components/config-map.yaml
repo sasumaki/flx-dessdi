@@ -3,8 +3,25 @@ kind: ConfigMap
 metadata:
   name: config-br-default-channel
   namespace: seldon-system
-  labels:
-    eventing.knative.dev/release: devel
+data:
+  channelTemplateSpec: |
+    apiVersion: messaging.knative.dev/v1
+    kind: InMemoryChannel
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-br-default-channel
+  namespace: knative-eventing
+data:
+  channelTemplateSpec: |
+    apiVersion: messaging.knative.dev/v1
+    kind: InMemoryChannel
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-br-default-channel
 data:
   channelTemplateSpec: |
     apiVersion: messaging.knative.dev/v1
