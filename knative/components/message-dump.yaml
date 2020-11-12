@@ -2,6 +2,7 @@ apiVersion: serving.knative.dev/v1alpha1
 kind: Service
 metadata:
   name: message-dumper
+  namespace: seldon-system
 spec:
   template:
     metadata:
