@@ -1,0 +1,9 @@
+apiVersion: eventing.knative.dev/v1beta1
+kind: Trigger
+metadata:
+  name: seldon-eventing-mnist-trigger3
+  namespace: seldon-system
+spec:
+  broker: default
+  subscriber:
+    uri: http://message-dumper.seldon-system.example.com
