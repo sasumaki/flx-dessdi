@@ -361,7 +361,7 @@ metadata:
     duck.knative.dev/addressable: "true"
 spec:
   group: messaging.knative.dev
-  version: v1alpha1
+  version: v1beta1
   names:
     kind: NatssChannel
     plural: natsschannels
@@ -393,6 +393,7 @@ spec:
     openAPIV3Schema:
       properties:
         spec:
+          type: object
           properties:
             subscribable:
               type: object
@@ -401,6 +402,7 @@ spec:
                   type: array
                   description: "The list of subscribers that have expressed interest in receiving events from this channel."
                   items:
+                    type: array
                     required:
                       - uid
                     properties:
