@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: "./knative"
+  path: ./knative
   prune: true
   validation: client
   dependsOn:
