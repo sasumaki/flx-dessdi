@@ -23,4 +23,4 @@ subjects:
 roleRef:
   kind: ClusterRole
   name: eventing-controller-natsschannels
-  apiGroup: messaging.knative.dev
+  apiGroup: rbac.authorization.k8s.io
