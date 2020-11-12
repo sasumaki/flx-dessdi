@@ -1,26 +1,26 @@
-# kind: ClusterRole
-# apiVersion: rbac.authorization.k8s.io/v1
-# metadata:
-#   name: eventing-controller-natsschannels
-# rules:
-# - apiGroups: ["messaging.knative.dev"]
-#   # at the HTTP level, the name of the resource for accessing Job
-#   # objects is "jobs"
-#   resources: ["natsschannels"]
-#   verbs: ["get", "list", "watch", "create", "delete"]
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: eventing-controller-natsschannels
+rules:
+- apiGroups: ["messaging.knative.dev"]
+  # at the HTTP level, the name of the resource for accessing Job
+  # objects is "jobs"
+  resources: ["natsschannels"]
+  verbs: ["get", "list", "watch", "create", "delete"]
 
-# ---
-# apiVersion: rbac.authorization.k8s.io/v1
-# kind: ClusterRoleBinding
-# metadata:
-#   name: eventing-controller
-#   labels:
-#     eventing.knative.dev/release: "v0.18.0"
-# subjects:
-# - kind: ServiceAccount
-#   name: eventing-controller
-#   namespace: knative-eventing
-# roleRef:
-#   kind: ClusterRole
-#   name: eventing-controller-natsschannels
-#   apiGroup: messaging.knative.dev
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: eventing-controller-natss-binding
+  labels:
+    eventing.knative.dev/release: "v0.18.0"
+subjects:
+- kind: ServiceAccount
+  name: eventing-controller
+  namespace: knative-eventing
+roleRef:
+  kind: ClusterRole
+  name: eventing-controller-natsschannels
+  apiGroup: messaging.knative.dev
