@@ -9,7 +9,8 @@ spec:
   prune: true
   validation: client
   dependsOn:
-    - name: knative-operator
+    - name: knative-eventing
+    - name: knative-serving
   sourceRef:
     kind: GitRepository
     name: flux-system
