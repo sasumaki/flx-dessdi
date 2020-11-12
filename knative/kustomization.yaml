@@ -8,6 +8,5 @@ resources:
   - ./config-map.yaml
   - ./channel.yaml
   - ./broker.yaml
-  - ./cluster-role
   - ./message-dump.yaml
   - ./seldon-knative-trigger.yaml
