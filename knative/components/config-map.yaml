@@ -2,8 +2,3 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: config-br-default-channel
-data:
-  # Configuration for defaulting channels that do not specify CRD implementations.
-  channelTemplateSpec: |
-      apiVersion: messaging.knative.dev/v1beta1
-      kind: NatssChannel
