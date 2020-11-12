@@ -5,7 +5,6 @@ metadata:
   namespace: knative-eventing
 data:
   # Configuration for defaulting channels that do not specify CRD implementations.
-  config-br-default-channel: |
-    clusterDefault:
+  channelTemplateSpec: |
       apiVersion: messaging.knative.dev/v1beta1
       kind: NatssChannel
