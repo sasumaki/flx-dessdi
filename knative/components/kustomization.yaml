@@ -5,3 +5,4 @@ resources:
   - ./seldon-knative-trigger.yaml
   - ./message-dump.yaml
   - ./another-trigger.yaml
+  - ./third-trigger.yaml
