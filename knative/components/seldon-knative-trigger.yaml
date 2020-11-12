@@ -3,7 +3,7 @@ kind: Trigger
 metadata:
   name: seldon-eventing-mnist-trigger
 spec:
-  broker: default
+  broker: default.seldon-system
   filter:
     attributes:
       type: seldon.mnist-model.seldon-system.request
