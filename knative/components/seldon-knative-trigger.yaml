@@ -4,6 +4,9 @@ metadata:
   name: seldon-eventing-mnist-trigger
   namespace: knative-eventing
 spec:
+  broker:
+   - name: default
+     namespace: seldon-system
   filter:
     attributes:
       type: seldon.mnist-model.seldon-system.request
