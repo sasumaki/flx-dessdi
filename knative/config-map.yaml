@@ -4,7 +4,7 @@ metadata:
   name: nats-channel
   namespace: knative-eventing
 data:
-  default-ch-config: |
-    clusterDefault:
-      apiVersion: messaging.knative.dev/v1
-      kind: NatssChannel
+  channelTemplateSpec: |
+    apiVersion: messaging.knative.dev/v1alpha1
+    kind: NatssChannel
+  
