@@ -1,15 +1,15 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
-  name: knative-operator
+  name: knative-eventing
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./knative
+  path: ./knative/eventing
   prune: true
   validation: client
   dependsOn:
-    - name: nats-streaming
+    - name: knative-operator
   sourceRef:
     kind: GitRepository
     name: flux-system

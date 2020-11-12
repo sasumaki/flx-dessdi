@@ -3,10 +3,4 @@ kind: Kustomization
  
 resources:
   - https://github.com/knative/operator/releases/latest/download/operator.yaml
-  - ./namespace.yaml
-  # - ./serving.yaml
-  # - ./eventing.yaml
-  # - ./channel.yaml
-  # - ./broker.yaml
-  # - ./message-dump.yaml
-  # - ./seldon-knative-trigger.yaml
+  - ./namespaces.yaml
