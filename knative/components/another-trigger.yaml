@@ -2,12 +2,13 @@ apiVersion: eventing.knative.dev/v1beta1
 kind: Trigger
 metadata:
   name: seldon-eventing-mnist-trigger2
-  namespace: seldon-system
 spec:
   broker: default
   filter:
     attributes:
       type: io.seldon.serving.inference.request
   subscriber:
-    uri: http://event-display
-
+    ref:
+      apiVersion: v1
+      kind: Service
+      name: event-display
