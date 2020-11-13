@@ -20,12 +20,11 @@ kind: Trigger
 metadata:
   name: event-display-response
   namespace: seldon-system
-
 spec:
   broker: default
   filter:
     attributes:
-      type: seldon.mnist-model.seldon-system.response
+      type: io.seldon.serving.inference.response
   subscriber:
     ref:
       apiVersion: v1
