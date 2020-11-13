@@ -10,7 +10,7 @@ ds = tfds.load(name="mnist", split="test", as_supervised=True)
 
 sc = SeldonClient(deployment_name="mnist-model", namespace="seldon-system", gateway_endpoint="localhost:8081", gateway="istio")
 print(sc.config)
-test_size = 10000
+test_size = 1
 corrects = 0
 wrong = 0
 data = ds.take(test_size).cache()
