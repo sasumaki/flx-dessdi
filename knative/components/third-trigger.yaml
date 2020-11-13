@@ -6,4 +6,7 @@ metadata:
 spec:
   broker: default
   subscriber:
-    uri: http://message-dumper.seldon-system.example.com
+    ref:
+      apiVersion: serving.knative.dev/v1alpha1
+      kind: Service
+      name: message-dumper
