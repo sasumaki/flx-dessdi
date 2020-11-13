@@ -8,7 +8,7 @@ spec:
   broker: default
   filter:
     attributes:
-    type: io.seldon.serving.inference.request
+      type: io.seldon.serving.inference.request
   subscriber:
     ref:
       apiVersion: v1
