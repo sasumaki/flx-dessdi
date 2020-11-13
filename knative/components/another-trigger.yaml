@@ -9,8 +9,8 @@ spec:
     attributes:
       type: io.seldon.serving.inference.request
   subscriber:
-     ref:
-      apiVersion: serving.knative.dev/v1alpha1
+    ref:
+      apiVersion: v1
       kind: Service
-      name: message-dumper
+      name: event-display
 
