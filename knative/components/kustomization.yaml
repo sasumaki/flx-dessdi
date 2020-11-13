@@ -6,3 +6,4 @@ resources:
   - ./message-dump.yaml
   - ./another-trigger.yaml
   - ./third-trigger.yaml
+  - ./channel.yaml
