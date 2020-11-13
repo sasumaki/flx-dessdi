@@ -6,7 +6,4 @@ metadata:
 spec:
   broker: default
   subscriber:
-     ref:
-      apiVersion: v1
-      kind: Service
-      name: event-display
+    uri: http://event-display
