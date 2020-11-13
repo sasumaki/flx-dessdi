@@ -9,4 +9,7 @@ spec:
       type: seldon.mnist-model.default.response
       source: seldon.mnist-model
   subscriber:
-    uri: http://event-display
+    ref:
+      apiVersion: v1
+      kind: Service
+      name: event-display
