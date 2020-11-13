@@ -7,3 +7,4 @@ resources:
   - ./another-trigger.yaml
   - ./third-trigger.yaml
   - ./channel.yaml
+  - https://github.com/knative/serving/blob/release-0.18/third_party/net-istio.yaml
