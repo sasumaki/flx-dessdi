@@ -10,3 +10,4 @@ staging-cluster/minio/minio-secret.yaml
 sekrits/unsealed
 sekrits/unsealed/deployment-secret.yaml
 sekrits/unsealed/minio-secret.yaml
+knative/components/teestst
