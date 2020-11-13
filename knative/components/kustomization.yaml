@@ -7,4 +7,3 @@ resources:
   - ./another-trigger.yaml
   - ./third-trigger.yaml
   - ./channel.yaml
-  - ./istio-third-party.yaml
