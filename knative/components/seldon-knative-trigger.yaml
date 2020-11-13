@@ -8,8 +8,7 @@ spec:
   broker: default
   filter:
     attributes:
-      type: seldon.mnist-model.default.response
-      source: seldon.mnist-model
+      type: seldon.mnist-model.seldon-system.response
   subscriber:
     ref:
       apiVersion: v1
