@@ -1,15 +1,15 @@
-apiVersion: eventing.knative.dev/v1beta1
+apiVersion: eventing.knative.dev/v1alpha1
 kind: Trigger
 metadata:
-  name: seldon-eventing-mnist-trigger
-  namespace: seldon-system
+  name: event-display
 spec:
   broker: default
   filter:
     attributes:
-      type: seldon.mnist-model.seldon-system.request
+      type: seldon.mnist-model.default.response
+      source: seldon.mnist-model
   subscriber:
-     ref:
+    ref:
       apiVersion: v1
       kind: Service
       name: event-display
