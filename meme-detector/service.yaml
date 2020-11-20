@@ -1,0 +1,30 @@
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: meme-detector
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"
+    spec:
+      containers:
+      - image: seldonio/alibi-detect-server:0.0.1
+        imagePullPolicy: IfNotPresent
+        args:
+        - --model_name
+        - mnist
+        - --http_port
+        - '8080'
+        - --protocol
+        - seldon.http
+        - --storage_uri
+        - s3://aiga-models/mnist1
+        - --reply_url
+        - http://broker-ingress.knative-eventing.svc.cluster.local/seldon-system/default       
+        - --event_type
+        - io.seldon.serving.inference.meme
+        - --event_source
+        - io.seldon.serving.meme-detector
+        # - OutlierDetector
