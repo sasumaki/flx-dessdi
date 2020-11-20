@@ -11,6 +11,6 @@ spec:
         autoscaling.knative.dev/minScale: "1"
     spec:
       containers:
-      - image: sasumaki/meme-detector
+      - image: sasumaki/meme-detector:0.0.1
         imagePullPolicy: IfNotPresent
       
