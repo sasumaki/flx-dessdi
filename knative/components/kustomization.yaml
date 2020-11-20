@@ -6,3 +6,5 @@ resources:
   - ./seldon-knative-trigger.yaml
   - ./message-dump.yaml
   - ./channel.yaml
+  - ./seldon-detect-trigger.yaml
+  - ./seldon-meme-detector-trigger.yaml
