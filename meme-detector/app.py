@@ -8,12 +8,12 @@ app = Flask(__name__)
 # create an endpoint at http://localhost:/8080/
 @app.route("/", methods=["POST"])
 def home():
-  print("wat")
+  app.logger.info("wat")
   # create a CloudEvent
   event = from_http(request.headers, request.get_data())
 
   # you can access cloudevent fields as seen below
-  print(
+  app.logger.info(
       f"Found {event['id']} from {event['source']} with type "
       f"{event['type']} and specversion {event['specversion']}"
   )
@@ -22,4 +22,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080, debug=True)
