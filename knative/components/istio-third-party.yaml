@@ -527,7 +527,7 @@ metadata:
 spec:
   selector:
     app: istio-ingressgateway
-    istio: ingressgateway
+    istio: cluster-local-gateway
     release: istio
   ports:
     - name: status-port
