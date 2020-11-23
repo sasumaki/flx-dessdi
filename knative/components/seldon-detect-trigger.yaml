@@ -11,6 +11,6 @@ spec:
       type: io.seldon.serving.inference.request
   subscriber:
     ref:
-      apiVersion: serving.knative.dev/v1
+      apiVersion: v1
       kind: Service
       name: meme-detector
