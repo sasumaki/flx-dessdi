@@ -4,7 +4,9 @@ kind: Service
 metadata:
   name: meme-detector
   namespace: seldon-system
-  serving.knative.dev/visibility: cluster-local
+  labels:
+    serving.knative.dev/visibility: cluster-local
+
 spec:
   template:
     metadata:
