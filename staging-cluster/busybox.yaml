@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: busybox1
+  namespace: seldon-system
   labels:
     app: busybox1
 spec:
