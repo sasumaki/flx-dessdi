@@ -6,6 +6,7 @@ metadata:
   namespace: seldon-system
   labels:
     serving.knative.dev/visibility: cluster-local
+    istio: cluster-local-gateway
 
 spec:
   template:
