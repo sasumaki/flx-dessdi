@@ -1,5 +1,8 @@
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
+metadata:
+  name: knative-istio-control
+  namespace: istio-system
 spec:
   values:
     global:
