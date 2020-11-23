@@ -527,7 +527,7 @@ selector:
   app: istio-ingressgateway
   istio: ingressgateway
   release: istio
-resourceVersion: "1579"
+  resourceVersion: "1579"
 spec:
   ports:
     - name: status-port
