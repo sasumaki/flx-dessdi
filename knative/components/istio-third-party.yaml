@@ -526,7 +526,7 @@ metadata:
   resourceVersion: "1579"
 spec:
   selector:
-    app: istio-ingressgateway
+    app: cluster-local-gateway
     istio: cluster-local-gateway
     release: istio
   ports:
