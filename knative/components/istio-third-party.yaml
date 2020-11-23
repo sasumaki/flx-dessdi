@@ -83,10 +83,11 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: cluster-local-gateway
-  namespace: knative-serving
+  namespace: istio-system
   labels:
     serving.knative.dev/release: "v20200928-4a59aa96"
     networking.knative.dev/ingress-provider: istio
+    istio: cluster-local-gateway
 spec:
   selector:
     istio: cluster-local-gateway
