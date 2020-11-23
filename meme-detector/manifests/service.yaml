@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: meme-detector
-          image: sasumaki/meme-detector:0.0.1
+          image: sasumaki/meme-detector:0.0.2
 ---
 # Service that exposes event-display app.
 # This will be the subscriber for the Trigger
