@@ -523,6 +523,10 @@ kind: Service
 metadata:
   name: cluster-local-gateway
   namespace: istio-system
+selector:
+  app: istio-ingressgateway
+  istio: ingressgateway
+  release: istio
 resourceVersion: "1579"
 spec:
   ports:
@@ -562,7 +566,4 @@ spec:
       port: 15443
       protocol: TCP
       targetPort: 15443
-selector:
-app: istio-ingressgateway
-istio: ingressgateway
-release: istio
+
