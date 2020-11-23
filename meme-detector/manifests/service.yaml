@@ -1,20 +1,52 @@
 
-apiVersion: serving.knative.dev/v1
-kind: Service
+# apiVersion: serving.knative.dev/v1
+# kind: Service
+# metadata:
+#   name: meme-detector
+#   namespace: seldon-system
+#   labels:
+
+# spec:
+#   template:
+#     metadata:
+#       annotations:
+#         autoscaling.knative.dev/minScale: "1"
+#     spec:
+#       containers:
+#       - image: sasumaki/meme-detector:0.0.1
+#         imagePullPolicy: IfNotPresent
+#       # event-display app deploment
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: meme-detector
   namespace: seldon-system
-  labels:
-    serving.knative.dev/visibility: cluster-local
-    istio: cluster-local-gateway
 
 spec:
+  replicas: 1
+  selector:
+    matchLabels: &labels
+      app: meme-detector
   template:
     metadata:
-      annotations:
-        autoscaling.knative.dev/minScale: "1"
+      labels: *labels
     spec:
       containers:
-      - image: sasumaki/meme-detector:0.0.1
-        imagePullPolicy: IfNotPresent
-      
+        - name: meme-detector
+          image: sasumaki/meme-detector:0.0.1
+---
+# Service that exposes event-display app.
+# This will be the subscriber for the Trigger
+kind: Service
+apiVersion: v1
+metadata:
+  name: meme-detector
+  namespace: seldon-system
+
+spec:
+  selector:
+    app: meme-detector
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
