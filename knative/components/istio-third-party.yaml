@@ -523,7 +523,6 @@ kind: Service
 metadata:
   name: cluster-local-gateway
   namespace: istio-system
-  resourceVersion: "1579"
 spec:
   selector:
     app: cluster-local-gateway
