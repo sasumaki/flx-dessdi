@@ -15,3 +15,21 @@ spec:
       apiVersion: v1
       kind: Service
       name: event-display
+---
+apiVersion: eventing.knative.dev/v1beta1
+kind: Trigger
+metadata:
+  name: event-meme-detector-display2
+  namespace: seldon-system
+
+spec:
+  broker: default
+  filter:
+    attributes:
+      type: io.seldon.serving.inference.response
+      inferenceservicename: detector-detector
+  subscriber:
+    ref:
+      apiVersion: v1
+      kind: Service
+      name: event-display
