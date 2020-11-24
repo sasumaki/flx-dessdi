@@ -9,7 +9,7 @@ spec:
   filter:
     attributes:
       type: io.seldon.serving.inference.response
-      source: seldon.meme-detector
+      source: seldon.detector
   subscriber:
     ref:
       apiVersion: v1

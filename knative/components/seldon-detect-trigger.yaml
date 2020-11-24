@@ -13,4 +13,4 @@ spec:
     ref:
       apiVersion: machinelearning.seldon.io/v1
       kind: SeldonDeployment
-      name: meme-detector
+      name: detector
