@@ -34,7 +34,7 @@ spec:
         - name: model_uri
           type: STRING
           value: s3://aiga-models/mnist1
-      name: mnist
+      name: detector
       type: MODEL
     name: detector
     replicas: 1
