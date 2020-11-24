@@ -60,9 +60,10 @@ class DummyDetector(SeldonComponent):
     
     return {}
 
-  def predict(self, X, features_names):
+  def predict(self, X, features_names, meta):
     print("GOT A REQ")
-    
+    print(meta)
+    print(X)
     r = random.randint(0, 10)
     res = np.array([0])
     if (r > 9):
