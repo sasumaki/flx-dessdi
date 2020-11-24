@@ -1,19 +1,24 @@
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: eventing-controller-natsschannels
+  name: eventing-controller-custom
 rules:
 - apiGroups: ["messaging.knative.dev"]
   # at the HTTP level, the name of the resource for accessing Job
   # objects is "jobs"
   resources: ["natsschannels", "natschannels"]
   verbs: ["get", "list", "watch", "create", "delete"]
+- apiGroups: ["machinelearning.seldon.io"]
+  # at the HTTP level, the name of the resource for accessing Job
+  # objects is "jobs"
+  resources: ["seldondeployments"]
+  verbs: ["get", "list", "watch", "create", "delete"]
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: eventing-controller-natss-binding
+  name: eventing-controller-custom-binding
   labels:
     eventing.knative.dev/release: "v0.18.0"
 subjects:
@@ -22,5 +27,5 @@ subjects:
   namespace: knative-eventing
 roleRef:
   kind: ClusterRole
-  name: eventing-controller-natsschannels
+  name: eventing-controller-custom
   apiGroup: rbac.authorization.k8s.io
