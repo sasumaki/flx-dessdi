@@ -24,9 +24,6 @@ metadata:
 
 spec:
   broker: default
-  filter:
-    attributes:
-      inferenceservicename: detector
   subscriber:
     ref:
       apiVersion: v1
