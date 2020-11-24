@@ -69,7 +69,7 @@ class DummyDetector(SeldonComponent):
     if (r > 9):
       res = np.array([1])
 
-    return SeldonResponse(data=res, metrics=runtime_metrics)
+    return SeldonResponse(data=res)
 
   def tags(self):
     tag = {
