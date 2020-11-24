@@ -6,4 +6,4 @@ resources:
 images:
 - name: MODEL_IMAGE
   newName: sasumaki/meme-detector
-  newTag: 0.0.5
+  newTag: 0.0.6
