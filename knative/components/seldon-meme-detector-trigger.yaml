@@ -9,7 +9,7 @@ spec:
   filter:
     attributes:
       type: io.seldon.serving.inference.response
-      source: seldon.detector.seldon-system
+      inferenceservicename: detector
   subscriber:
     ref:
       apiVersion: v1
