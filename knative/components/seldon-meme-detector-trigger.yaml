@@ -26,8 +26,7 @@ spec:
   broker: default
   filter:
     attributes:
-      type: io.seldon.serving.inference.response
-      inferenceservicename: detector-detector
+      inferenceservicename: detector
   subscriber:
     ref:
       apiVersion: v1
