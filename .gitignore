@@ -11,3 +11,5 @@ sekrits/unsealed
 sekrits/unsealed/deployment-secret.yaml
 sekrits/unsealed/minio-secret.yaml
 knative/components/teestst
+meme-detector/ceserver/__pycache__
+meme-detector/ceserver/protocols/__pycache__

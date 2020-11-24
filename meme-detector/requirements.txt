@@ -1,2 +1,9 @@
-cloudevents
-flask
+seldon-core
+numpy
+pillow
+opencv-python
+joblib
+typing
+onnx
+onnxruntime
+minio

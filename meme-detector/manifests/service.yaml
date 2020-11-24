@@ -1,3 +1,47 @@
+piVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  name: detector
+  namespace: seldon-system
+spec:
+  name: detector
+  predictors:
+  - componentSpecs:
+    - spec:
+        containers:
+        - name: detector
+          image: MODEL_IMAGE
+          env:
+            - name: AWS_ACCESS_KEY_ID # ENV name passed to container
+              valueFrom:
+                secretKeyRef:
+                  name: seldon-init-container-secret
+                  key: AWS_ACCESS_KEY_ID # ENV name in the secret
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: seldon-init-container-secret
+                  key: AWS_SECRET_ACCESS_KEY
+            - name: AWS_ENDPOINT_URL
+              value:  https://s3.eu-west-2.amazonaws.com/
+    graph:
+      children: []
+      modelUri: s3://aiga-models/mnist1
+      envSecretRefName: seldon-init-container-secret
+      endpoint:
+        type: REST
+      parameters:
+        - name: model_uri
+          type: STRING
+          value: s3://aiga-models/mnist1
+      name: mnist
+      type: MODEL
+    name: detector
+    replicas: 1
+
+      
+
+
 # apiVersion: serving.knative.dev/v1
 # kind: Service
 # metadata:
@@ -17,37 +61,52 @@
 #       - image: sasumaki/meme-detector:0.0.2
 #         imagePullPolicy: IfNotPresent
 #       # event-display app deploment
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: meme-detector
-  namespace: seldon-system
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: meme-detector
+#   namespace: seldon-system
 
-spec:
-  replicas: 1
-  selector:
-    matchLabels: &labels
-      app: meme-detector
-  template:
-    metadata:
-      labels: *labels
-    spec:
-      containers:
-        - name: meme-detector
-          image: sasumaki/meme-detector:0.0.3
----
-# Service that exposes event-display app.
-# This will be the subscriber for the Trigger
-kind: Service
-apiVersion: v1
-metadata:
-  name: meme-detector
-  namespace: seldon-system
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels: &labels
+#       app: meme-detector
+#   template:
+#     metadata:
+#       labels: *labels
+#     spec:
+#       containers:
+#         - name: meme-detector
+#           image: sasumaki/meme-detector:0.0.3
+#           env:
+#             - name: AWS_ACCESS_KEY_ID # ENV name passed to container
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: seldon-init-container-secret
+#                   key: AWS_ACCESS_KEY_ID # ENV name in the secret
+#             - name: AWS_SECRET_ACCESS_KEY
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: seldon-init-container-secret
+#                   key: AWS_SECRET_ACCESS_KEY
+#             - name: AWS_ENDPOINT_URL
+#               value:  https://s3.eu-west-2.amazonaws.com/
+#             - name: MODEL_URI
+#               value: s3://aiga-models/mnist1
+# ---
+# # Service that exposes event-display app.
+# # This will be the subscriber for the Trigger
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: meme-detector
+#   namespace: seldon-system
 
-spec:
-  selector:
-    app: meme-detector
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
+# spec:
+#   selector:
+#     app: meme-detector
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 8080

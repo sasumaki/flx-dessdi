@@ -8,7 +8,8 @@ spec:
   broker: default
   filter:
     attributes:
-      type: io.seldon.serving.inference.meme
+      type: io.seldon.serving.inference.response
+      source: seldon.meme-detector
   subscriber:
     ref:
       apiVersion: v1

@@ -11,6 +11,6 @@ spec:
       type: io.seldon.serving.inference.request
   subscriber:
     ref:
-      apiVersion: v1
-      kind: Service
+      apiVersion: machinelearning.seldon.io/v1
+      kind: SeldonDeployment
       name: meme-detector
