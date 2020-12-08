@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ./deployment-secret-sealed.yaml
-- ./minio-secret-sealed.yaml
+- ./flux-minio-secret-sealed.yaml
+- ./argo-minio-secret-sealed.yaml
 - ./aws-creds-sealed.yaml
 - ./ssh-secret-sealed.yaml

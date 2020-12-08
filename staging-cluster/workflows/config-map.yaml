@@ -13,12 +13,10 @@ data:
       accessKeySecret:
         name: minio-secret
         key: accessKey
-        namespace: flux-system
 
       secretKeySecret:
         name: minio-secret
         key: secretKey
-        namespace: flux-system
   containerRuntimeExecutor: pns
   metricsConfig: |
     disableLegacy: true
