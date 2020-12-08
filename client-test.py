@@ -10,14 +10,13 @@ ds = tfds.load(name="mnist", split="test", as_supervised=True)
 
 sc = SeldonClient(deployment_name="mnist-model", namespace="seldon-system", gateway_endpoint="localhost:8081", gateway="istio")
 print(sc.config)
-test_size = 1
+test_size = 100
 corrects = 0
 wrong = 0
 data = ds.take(test_size).cache()
 for image, label in data:
 
   r = sc.predict(data=np.array(image), gateway="istio",transport="rest")
- # print(r.msg)
   assert(r.success==True)
 
   res = r.response['data']['tensor']['values']

@@ -13,3 +13,4 @@ sekrits/unsealed/minio-secret.yaml
 knative/components/teestst
 meme-detector/ceserver/__pycache__
 meme-detector/ceserver/protocols/__pycache__
+training/ssh-secret.yaml

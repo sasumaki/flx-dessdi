@@ -1,0 +1,86 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: mnist-
+  namespace: argo
+spec:
+  volumes:
+  - name: ssh-key-volume
+    secret:
+      secretName: github-creds
+      defaultMode: 256
+  entrypoint: flow 
+  templates:
+  - name: flow
+    steps:
+      - - name: train
+          template: training
+      - - name: git
+          template: git-commit
+          arguments:
+            parameters:
+            # Pass the hello-param output from the generate-parameter step as the message input to print-message
+            - name: S3_MODEL_URI
+              value: "{{steps.train.outputs.parameters.S3_MODEL_URI}}"
+
+
+  - name: training
+    container:
+      image: sasumaki/mnist-train
+      command: [python, train.py]
+    outputs:
+      parameters:
+        - name: S3_MODEL_URI
+          value: s3://aiga-models/{{pod.name}}
+      artifacts:
+      - name: model
+        path: /app/outputs/model.onnx
+        s3:
+          endpoint: s3.amazonaws.com
+          bucket: aiga-models
+          key: "{{pod.name}}/model.onnx"
+          archive:
+            none: {}
+
+          accessKeySecret:
+            name: aws-secret
+            key: AWS_ACCESS_KEY_ID
+          secretKeySecret:
+            name: aws-secret
+            key: AWS_SECRET_ACCESS_KEY
+    
+
+  - name: git-commit
+    inputs:
+      parameters:
+        - name: S3_MODEL_URI
+      artifacts:
+      - name: mnist-source
+        path: /src
+        git:
+          repo: https://github.com/sasumaki/mnist.git
+          depth: 1
+          revision: staging
+    script: 
+      image: sasumaki/git:b
+      command: [sh]
+      volumeMounts:
+      - name: ssh-key-volume
+        mountPath: "/root/.ssh"
+      source: |
+        cd /src
+        ls -la
+        echo "MODEL_URI={{inputs.parameters.S3_MODEL_URI}}" > manifests/environment.properties
+        cat manifests/environment.properties
+        git config --global user.email "workflow-bot@example.com"
+        git config --global user.name "Argo Workflows"
+        git add -A
+        git status
+        git commit -m "bump model uri"
+
+        ls -la /
+
+        export GIT_SSH_COMMAND="ssh -i /root/.ssh/id_rsa"
+        git push git@github.com:sasumaki/mnist.git
+
+
