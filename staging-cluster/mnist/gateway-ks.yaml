@@ -9,7 +9,6 @@ spec:
   prune: true
   validation: client
   dependsOn:
-    - name: istio-operator
     - name: istiod
     - name: istio-base
   sourceRef:

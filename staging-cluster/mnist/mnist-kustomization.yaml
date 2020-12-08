@@ -18,7 +18,6 @@ spec:
     name: mnist
   dependsOn: 
     - name: istiod
-    - name: istio-operator
     - name: istio-base
   validation: client
 
