@@ -19,6 +19,9 @@ spec:
       - name: models
         policy: public
         purge: false
+      - name: argo
+        policy: public
+        purge: false
   valuesFrom:
   - kind: Secret
     name: minio-secret
