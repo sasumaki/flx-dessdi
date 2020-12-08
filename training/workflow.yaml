@@ -4,6 +4,7 @@ metadata:
   generateName: mnist-
   namespace: argo
 spec:
+  # serviceAccountName: argo
   volumes:
   - name: ssh-key-volume
     secret:
