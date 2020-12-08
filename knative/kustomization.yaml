@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - https://github.com/knative/operator/releases/latest/download/operator.yaml
   - ./namespaces.yaml
+  - ./istio-operator-minimal.yaml
