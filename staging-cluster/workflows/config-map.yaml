@@ -4,18 +4,18 @@ metadata:
   name: workflow-controller-configmap
   namespace: argo
 data:
-  # artifactRepository: |
-  #   archiveLogs: true
-  #   s3:
-  #     bucket: my-bucket
-  #     endpoint: minio:9000
-  #     insecure: true
-  #     accessKeySecret:
-  #       name: my-minio-cred
-  #       key: accesskey
-  #     secretKeySecret:
-  #       name: my-minio-cred
-  #       key: secretkey
+  artifactRepository: |
+    archiveLogs: true
+    s3:
+      bucket: my-bucket
+      endpoint: minio:9000
+      insecure: true
+      accessKeySecret:
+        name: minio-secret
+        key: accessKey
+      secretKeySecret:
+        name: minio-secret
+        key: secretKey
   containerRuntimeExecutor: pns
   metricsConfig: |
     disableLegacy: true
