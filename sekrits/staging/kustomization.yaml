@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
 - ./deployment-secret-sealed.yaml
 - ./minio-secret-sealed.yaml
+- ./aws-creds-sealed.yaml
+- ./ssh-secret-sealed.yaml
