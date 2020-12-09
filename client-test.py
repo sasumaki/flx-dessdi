@@ -15,8 +15,11 @@ corrects = 0
 wrong = 0
 data = ds.take(test_size).cache()
 for image, label in data:
+  print(np.array(image).shape)
+  x = np.array(image).reshape(1, 28, 28, 1)
+  print(np.array(x).shape)
 
-  r = sc.predict(data=np.array(image), gateway="istio",transport="rest")
+  r = sc.predict(data=x, gateway="istio",transport="rest")
   assert(r.success==True)
 
   res = r.response['data']['tensor']['values']

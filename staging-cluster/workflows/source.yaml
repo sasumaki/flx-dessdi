@@ -8,5 +8,8 @@ spec:
   interval: 30s
   ref:
     tag: stable
+  ignore: |
+    # we apply our own
+    /manifests/base/workflow-controller/workflow-controller-configmap.yaml
   url: https://github.com/argoproj/argo
 
