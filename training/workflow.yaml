@@ -29,6 +29,21 @@ spec:
     container:
       image: sasumaki/mnist-train
       command: [python, train.py]
+    inputs:
+      artifacts:
+      - name: data
+        path: /app/data
+        s3:
+          endpoint: s3.amazonaws.com
+          bucket: aiga-data
+          key: MNIST_data
+          accessKeySecret:
+            name: aws-secret
+            key: AWS_ACCESS_KEY_ID
+          secretKeySecret:
+            name: aws-secret
+            key: AWS_SECRET_ACCESS_KEY
+
     outputs:
       parameters:
         - name: S3_MODEL_URI
@@ -36,13 +51,12 @@ spec:
       artifacts:
       - name: model
         path: /app/outputs/model.onnx
+        archive:
+          none: {}
         s3:
           endpoint: s3.amazonaws.com
           bucket: aiga-models
           key: "{{pod.name}}/model.onnx"
-          archive:
-            none: {}
-
           accessKeySecret:
             name: aws-secret
             key: AWS_ACCESS_KEY_ID
