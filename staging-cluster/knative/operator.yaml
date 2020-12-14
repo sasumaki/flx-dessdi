@@ -8,8 +8,6 @@ spec:
   path: ./knative
   prune: true
   validation: client
-  dependsOn:
-    - name: istio-operator
   sourceRef:
     kind: GitRepository
     name: flux-system
