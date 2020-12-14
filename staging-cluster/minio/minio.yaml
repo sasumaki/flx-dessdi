@@ -15,6 +15,9 @@ spec:
         name: minio
   interval: 10m0s
   values:
+    resources:
+      requests:
+        memory: 2Gi
     buckets:
       - name: models
         policy: public
