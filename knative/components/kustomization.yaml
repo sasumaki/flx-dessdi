@@ -9,3 +9,4 @@ resources:
   - ./seldon-detect-trigger.yaml
   - ./seldon-meme-detector-trigger.yaml
   - ./cluster-role.yaml
+  - ./broker.yaml
