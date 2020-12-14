@@ -1,56 +1,56 @@
-# ---
-# apiVersion: helm.toolkit.fluxcd.io/v2beta1
-# kind: HelmRelease
-# metadata:
-#   name: minio
-#   namespace: flux-system
-# spec:
-#   dependsOn:
-#     - name: sealed-secrets
-#   chart:
-#     spec:
-#       chart: ./minio
-#       sourceRef:
-#         kind: GitRepository
-#         name: minio
-#   interval: 10m0s
-#   values:
-#     buckets:
-#       - name: models
-#         policy: public
-#         purge: false
-#       - name: argo
-#         policy: public
-#         purge: false
-#     persistence:
-#       enabled: true
-#       ## A manually managed Persistent Volume and Claim
-#       ## Requires persistence.enabled: true
-#       ## If defined, PVC must be created manually before volume will be bound
-#       existingClaim: ""
-#       ## minio data Persistent Volume Storage Class
-#       ## If defined, storageClassName: <storageClass>
-#       ## If set to "-", storageClassName: "", which disables dynamic provisioning
-#       ## If undefined (the default) or set to null, no storageClassName spec is
-#       ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
-#       ##   GKE, AWS & OpenStack)
-#       ##
-#       ## Storage class of PV to bind. By default it looks for standard storage class.
-#       ## If the PV uses a different storage class, specify that here.
-#       storageClass: ""
-#       VolumeName: ""
-#       accessMode: ReadWriteOnce
-#       size: 25Gi
-#   valuesFrom:
-#   - kind: Secret
-#     name: minio-secret
-#     valuesKey: accessKey
-#     targetPath: accessKey
-#   - kind: Secret
-#     name: minio-secret
-#     valuesKey: secretKey
-#     targetPath: secretKey
-#   targetNamespace: minio
-#   releaseName: minio
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: minio
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: sealed-secrets
+  chart:
+    spec:
+      chart: ./minio
+      sourceRef:
+        kind: GitRepository
+        name: minio
+  interval: 10m0s
+  values:
+    buckets:
+      - name: models
+        policy: public
+        purge: false
+      - name: argo
+        policy: public
+        purge: false
+    persistence:
+      enabled: true
+      ## A manually managed Persistent Volume and Claim
+      ## Requires persistence.enabled: true
+      ## If defined, PVC must be created manually before volume will be bound
+      existingClaim: ""
+      ## minio data Persistent Volume Storage Class
+      ## If defined, storageClassName: <storageClass>
+      ## If set to "-", storageClassName: "", which disables dynamic provisioning
+      ## If undefined (the default) or set to null, no storageClassName spec is
+      ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+      ##   GKE, AWS & OpenStack)
+      ##
+      ## Storage class of PV to bind. By default it looks for standard storage class.
+      ## If the PV uses a different storage class, specify that here.
+      storageClass: ""
+      VolumeName: ""
+      accessMode: ReadWriteOnce
+      size: 25Gi
+  valuesFrom:
+  - kind: Secret
+    name: minio-secret
+    valuesKey: accessKey
+    targetPath: accessKey
+  - kind: Secret
+    name: minio-secret
+    valuesKey: secretKey
+    targetPath: secretKey
+  targetNamespace: minio
+  releaseName: minio
 
 
