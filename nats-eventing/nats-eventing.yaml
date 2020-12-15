@@ -17,19 +17,19 @@ kind: ClusterRole
 metadata:
   name: natss-addressable-resolver
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
     duck.knative.dev/addressable: "true"
 # Do not use this role directly. These rules will be added to the "addressable-resolver" role.
 rules:
-  - apiGroups:
-      - messaging.knative.dev
-    resources:
-      - natsschannels
-      - natsschannels/status
-    verbs:
-      - get
-      - list
-      - watch
+- apiGroups:
+  - messaging.knative.dev
+  resources:
+  - natsschannels
+  - natsschannels/status
+  verbs:
+  - get
+  - list
+  - watch
 
 ---
 # Copyright 2019 The Knative Authors
@@ -51,22 +51,22 @@ kind: ClusterRole
 metadata:
   name: natss-channelable-manipulator
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
     duck.knative.dev/channelable: "true"
 # Do not use this role directly. These rules will be added to the "channelable-manipulator" role.
 rules:
-  - apiGroups:
-      - messaging.knative.dev
-    resources:
-      - natsschannels
-      - natsschannels/status
-    verbs:
-      - create
-      - get
-      - list
-      - watch
-      - update
-      - patch
+- apiGroups:
+  - messaging.knative.dev
+  resources:
+  - natsschannels
+  - natsschannels/status
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+  - update
+  - patch
 
 ---
 # Copyright 2019 The Knative Authors
@@ -88,86 +88,86 @@ kind: ClusterRole
 metadata:
   name: natss-ch-controller
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
 rules:
-  - apiGroups:
-      - messaging.knative.dev
-    resources:
-      - natsschannels
-      - natsschannels/status
-    verbs:
-      - get
-      - list
-      - watch
-      - update
-      - patch
-  - apiGroups:
-      - messaging.knative.dev
-    resources:
-      - natsschannels/finalizers
-    verbs:
-      - update
-  - apiGroups:
-      - "" # Core API group.
-    resources:
-      - services
-      - configmaps
-    verbs:
-      - get
-      - list
-      - watch
-      - create
-  - apiGroups:
-      - "" # Core API group.
-    resources:
-      - services
-    verbs:
-      - update
-  - apiGroups:
-      - "" # Core API Group.
-    resources:
-      - events
-    verbs:
-      - create
-      - patch
-      - update
-  - apiGroups:
-      - ""
-    resources:
-      - configmaps
-    verbs:
-      - get
-      - list
-      - watch
-  - apiGroups:
-      - "" # Core API group.
-    resources:
-      - endpoints
-    verbs:
-      - get
-      - list
-      - watch
-  - apiGroups:
-      - apps
-    resources:
-      - deployments
-      - deployments/status
-    verbs:
-      - get
-      - list
-      - watch
-  - apiGroups:
-      - "coordination.k8s.io"
-    resources:
-      - "leases"
-    verbs:
-      - get
-      - list
-      - create
-      - update
-      - delete
-      - patch
-      - watch
+- apiGroups:
+  - messaging.knative.dev
+  resources:
+  - natsschannels
+  - natsschannels/status
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - patch
+- apiGroups:
+  - messaging.knative.dev
+  resources:
+  - natsschannels/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - "" # Core API group.
+  resources:
+  - services
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+- apiGroups:
+  - "" # Core API group.
+  resources:
+  - services
+  verbs:
+  - update
+- apiGroups:
+  - "" # Core API Group.
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - "" # Core API group.
+  resources:
+  - endpoints
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  - deployments/status
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - "coordination.k8s.io"
+  resources:
+  - "leases"
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - delete
+  - patch
+  - watch
 
 ---
 # Copyright 2019 The Knative Authors
@@ -189,43 +189,43 @@ kind: ClusterRole
 metadata:
   name: natss-ch-dispatcher
 rules:
-  - apiGroups:
-      - messaging.knative.dev
-    resources:
-      - natsschannels
-      - natsschannels/status
-    verbs:
-      - get
-      - list
-      - watch
-      - update
-      - patch
-  - apiGroups:
-      - messaging.knative.dev
-    resources:
-      - natsschannels/finalizers
-    verbs:
-      - update
-  - apiGroups:
-      - "" # Core API group.
-    resources:
-      - configmaps
-    verbs:
-      - get
-      - list
-      - watch
-  - apiGroups:
-      - "coordination.k8s.io"
-    resources:
-      - "leases"
-    verbs:
-      - get
-      - list
-      - create
-      - update
-      - delete
-      - patch
-      - watch
+- apiGroups:
+  - messaging.knative.dev
+  resources:
+  - natsschannels
+  - natsschannels/status
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - patch
+- apiGroups:
+  - messaging.knative.dev
+  resources:
+  - natsschannels/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - "" # Core API group.
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - "coordination.k8s.io"
+  resources:
+  - "leases"
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - delete
+  - patch
+  - watch
 
 ---
 # Copyright 2019 The Knative Authors
@@ -248,7 +248,7 @@ metadata:
   name: natss-ch-dispatcher
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
     messaging.knative.dev/channel: natss-channel
     messaging.knative.dev/role: dispatcher
 spec:
@@ -256,10 +256,10 @@ spec:
     messaging.knative.dev/channel: natss-channel
     messaging.knative.dev/role: dispatcher
   ports:
-    - name: http-dispatcher
-      port: 80
-      protocol: TCP
-      targetPort: 8080
+  - name: http-dispatcher
+    port: 80
+    protocol: TCP
+    targetPort: 8080
 
 ---
 # Copyright 2019 The Knative Authors
@@ -282,7 +282,7 @@ metadata:
   name: natss-ch-controller
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -290,7 +290,7 @@ metadata:
   name: natss-ch-dispatcher
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
 
 ---
 # Copyright 2019 The Knative Authors
@@ -312,11 +312,11 @@ kind: ClusterRoleBinding
 metadata:
   name: natss-ch-controller
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
 subjects:
-  - kind: ServiceAccount
-    name: natss-ch-controller
-    namespace: knative-eventing
+- kind: ServiceAccount
+  name: natss-ch-controller
+  namespace: knative-eventing
 roleRef:
   kind: ClusterRole
   name: natss-ch-controller
@@ -327,9 +327,9 @@ kind: ClusterRoleBinding
 metadata:
   name: natss-ch-dispatcher
 subjects:
-  - kind: ServiceAccount
-    name: natss-ch-dispatcher
-    namespace: knative-eventing
+- kind: ServiceAccount
+  name: natss-ch-dispatcher
+  namespace: knative-eventing
 roleRef:
   kind: ClusterRole
   name: natss-ch-dispatcher
@@ -350,91 +350,53 @@ roleRef:
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: natsschannels.messaging.knative.dev
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
     knative.dev/crd-install: "true"
     messaging.knative.dev/subscribable: "true"
     duck.knative.dev/addressable: "true"
 spec:
+  scope: Namespaced
   group: messaging.knative.dev
-  version: v1beta1
   names:
     kind: NatssChannel
     plural: natsschannels
     singular: natsschannel
     categories:
-      - all
-      - knative
-      - messaging
-      - channel
+    - all
+    - knative
+    - messaging
+    - channel
     shortNames:
-      - natssc
-  scope: Namespaced
-  subresources:
-    status: {}
+    - natssc
+  versions:
+  - name: v1beta1
+    served: true
+    storage: true
+    subresources:
+      status: {}
+    schema:
+      openAPIV3Schema:
+        type: object
+        # Workaround, existing schema is incomplete and fails validation.
+        x-kubernetes-preserve-unknown-fields: true
   additionalPrinterColumns:
-    - name: Ready
-      type: string
-      JSONPath: ".status.conditions[?(@.type==\"Ready\")].status"
-    - name: Reason
-      type: string
-      JSONPath: ".status.conditions[?(@.type==\"Ready\")].reason"
-    - name: URL
-      type: string
-      JSONPath: .status.address.url
-    - name: Age
-      type: date
-      JSONPath: .metadata.creationTimestamp
-  validation:
-    openAPIV3Schema:
-      properties:
-        spec:
-          type: object
-          properties:
-            subscribable:
-              type: object
-              properties:
-                subscribers:
-                  type: array
-                  description: "The list of subscribers that have expressed interest in receiving events from this channel."
-                  items:
-                    type: object
-                    required:
-                      - uid
-                    properties:
-                      ref:
-                        type: object
-                        required:
-                          - namespace
-                          - name
-                          - uid
-                        properties:
-                          apiVersion:
-                            type: string
-                          kind:
-                            type: string
-                          name:
-                            type: string
-                            minLength: 1
-                          namespace:
-                            type: string
-                            minLength: 1
-                          uid:
-                            type: string
-                            minLength: 1
-                      uid:
-                        type: string
-                        minLength: 1
-                      subscriberURI:
-                        type: string
-                        minLength: 1
-                      replyURI:
-                        type: string
-                        minLength: 1
+  - name: Ready
+    type: string
+    JSONPath: ".status.conditions[?(@.type==\"Ready\")].status"
+  - name: Reason
+    type: string
+    JSONPath: ".status.conditions[?(@.type==\"Ready\")].reason"
+  - name: URL
+    type: string
+    JSONPath: .status.address.url
+  - name: Age
+    type: date
+    JSONPath: .metadata.creationTimestamp
 
 ---
 # Copyright 2019 The Knative Authors
@@ -457,7 +419,7 @@ metadata:
   name: natss-ch-controller
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
 spec:
   replicas: 1
   selector:
@@ -470,27 +432,31 @@ spec:
     spec:
       serviceAccountName: natss-ch-controller
       containers:
-        - name: controller
-          image: gcr.io/knative-releases/knative.dev/eventing-natss/cmd/channel_controller@sha256:459f2166f251f0265ed466371b1029ea95e288a162ed111156e218ef716331b6
-          env:
-            - name: CONFIG_LOGGING_NAME
-              value: config-logging
-            - name: METRICS_DOMAIN
-              value: knative.dev/eventing
-            - name: SYSTEM_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-          ports:
-            - containerPort: 9090
-              name: metrics
-          volumeMounts:
-            - name: config-logging
-              mountPath: /etc/config-logging
-      volumes:
+      - name: controller
+        image: gcr.io/knative-releases/knative.dev/eventing-natss/cmd/channel_controller@sha256:33446fe7dc2e53dad0a2c29a9a0772bea6c28960d6ae761eacec6342a4715e16
+        env:
+        - name: CONFIG_LOGGING_NAME
+          value: config-logging
+        - name: METRICS_DOMAIN
+          value: knative.dev/eventing
+        - name: SYSTEM_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        ports:
+        - containerPort: 9090
+          name: metrics
+        volumeMounts:
         - name: config-logging
-          configMap:
-            name: config-logging
+          mountPath: /etc/config-logging
+      volumes:
+      - name: config-logging
+        configMap:
+          name: config-logging
 
 ---
 # Copyright 2019 The Knative Authors
@@ -513,7 +479,7 @@ metadata:
   name: natss-ch-dispatcher
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.18.1"
+    natss.eventing.knative.dev/release: "v0.19.0"
 spec:
   replicas: 1
   selector:
@@ -526,26 +492,32 @@ spec:
     spec:
       serviceAccountName: natss-ch-dispatcher
       containers:
-        - name: dispatcher
-          image: gcr.io/knative-releases/knative.dev/eventing-natss/cmd/channel_dispatcher@sha256:cc96f80f072c10269086161245f5aecf4e09d6e726e6ac074d83844f463e1653
-          env:
-            - name: CONFIG_LOGGING_NAME
-              value: config-logging
-            - name: METRICS_DOMAIN
-              value: knative.dev/eventing
-            - name: SYSTEM_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-          ports:
-            - containerPort: 9090
-              name: metrics
-          volumeMounts:
-            - name: config-logging
-              mountPath: /etc/config-logging
-      volumes:
+      - name: dispatcher
+        image: gcr.io/knative-releases/knative.dev/eventing-natss/cmd/channel_dispatcher@sha256:2c9ec6d0778cbae79ea088d723128803ec37799aae5a2acc181a51ddbffd5c3e
+        env:
+        - name: CONFIG_LOGGING_NAME
+          value: config-logging
+        - name: METRICS_DOMAIN
+          value: knative.dev/eventing
+        - name: SYSTEM_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: CONTAINER_NAME
+          value: dispatcher
+        ports:
+        - containerPort: 9090
+          name: metrics
+        volumeMounts:
         - name: config-logging
-          configMap:
-            name: config-logging
+          mountPath: /etc/config-logging
+      volumes:
+      - name: config-logging
+        configMap:
+          name: config-logging
 
 ---
