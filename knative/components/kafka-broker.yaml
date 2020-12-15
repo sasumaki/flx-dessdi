@@ -3,9 +3,9 @@ kind: Broker
 metadata:
   name: kafka-broker
   namespace: seldon-system
-spec:
-  config:
-    apiVersion: v1
-    kind: ConfigMap
-    name: kafka-channel
-    namespace: knative-eventing
+# spec:
+#   config:
+#     apiVersion: v1
+#     kind: ConfigMap
+#     name: kafka-channel
+#     namespace: knative-eventing
