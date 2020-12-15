@@ -6,7 +6,7 @@ metadata:
 data:
   channelTemplateSpec: |
     apiVersion: messaging.knative.dev/v1
-    kind: InMemoryChannel
+    kind: NatssChannel
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -16,7 +16,7 @@ metadata:
 data:
   channelTemplateSpec: |
     apiVersion: messaging.knative.dev/v1
-    kind: InMemoryChannel
+    kind: NatssChannel
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -25,4 +25,4 @@ metadata:
 data:
   channelTemplateSpec: |
     apiVersion: messaging.knative.dev/v1
-    kind: InMemoryChannel
+    kind: NatssChannel
