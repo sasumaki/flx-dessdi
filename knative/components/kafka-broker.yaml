@@ -9,12 +9,3 @@ spec:
     kind: ConfigMap
     name: kafka-channel
     namespace: knative-eventing
-  # Optional dead letter sink, you can specify either:
-  #  - deadLetterSink.ref, which is a reference to a Callable
-  #  - deadLetterSink.uri, which is an absolute URI to a Callable (It can potentially be out of the Kubernetes cluster)
-  # delivery:
-  #   deadLetterSink:
-  #     ref:
-  #       apiVersion: serving.knative.dev/v1
-  #       kind: Service
-  #       name: dlq-service
