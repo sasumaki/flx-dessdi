@@ -5,7 +5,7 @@ metadata:
   name: istio-base
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 60m0s
   path: ./manifests/charts/base
   prune: true
   sourceRef:

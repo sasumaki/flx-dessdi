@@ -11,5 +11,5 @@ spec:
       sourceRef:
         kind: GitRepository
         name: istio
-  interval: 10m0s
+  interval: 60m0s
   targetNamespace: istio-system
