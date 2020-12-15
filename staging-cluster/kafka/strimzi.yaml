@@ -13,3 +13,4 @@ spec:
         kind: GitRepository
         name: strimzi
   interval: 10m0s
+  targetNamespace: kafka
