@@ -6,7 +6,7 @@ rules:
 - apiGroups: ["messaging.knative.dev"]
   # at the HTTP level, the name of the resource for accessing Job
   # objects is "jobs"
-  resources: ["natsschannels", "natschannels"]
+  resources: ["natsschannels", "natschannels", "kafkachannels"]
   verbs: ["get", "list", "watch", "create", "delete"]
 - apiGroups: ["machinelearning.seldon.io"]
   # at the HTTP level, the name of the resource for accessing Job
