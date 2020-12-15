@@ -36,6 +36,9 @@ spec:
           value: s3://aiga-models/mnist1
       name: detector
       type: MODEL
+      logger:
+        mode: all
+        url: http://broker-ingress.knative-eventing.svc.cluster.local/seldon-system/kafka-backed-broker
     name: detector
     replicas: 1
 ---
