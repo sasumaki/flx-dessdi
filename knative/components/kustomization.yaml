@@ -10,5 +10,7 @@ resources:
   - ./seldon-meme-detector-trigger.yaml
   - ./cluster-role.yaml
   - ./broker.yaml
+  - https://storage.googleapis.com/knative-nightly/eventing-kafka/latest/source.yaml
+  - https://storage.googleapis.com/knative-nightly/eventing-kafka/latest/channel-consolidated.yaml
   - ./kafka-config-map.yaml
   - ./kafka-broker.yaml
