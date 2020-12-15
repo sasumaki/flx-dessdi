@@ -10,5 +10,5 @@ resources:
   - ./seldon-meme-detector-trigger.yaml
   - ./cluster-role.yaml
   - ./broker.yaml
-  # - ./kafka-config-map.yaml
-  # - ./kafka-broker.yaml
+  - ./kafka-config-map.yaml
+  - ./kafka-broker.yaml
