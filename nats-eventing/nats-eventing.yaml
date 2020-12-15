@@ -384,19 +384,6 @@ spec:
         type: object
         # Workaround, existing schema is incomplete and fails validation.
         x-kubernetes-preserve-unknown-fields: true
-  additionalPrinterColumns:
-  - name: Ready
-    type: string
-    JSONPath: ".status.conditions[?(@.type==\"Ready\")].status"
-  - name: Reason
-    type: string
-    JSONPath: ".status.conditions[?(@.type==\"Ready\")].reason"
-  - name: URL
-    type: string
-    JSONPath: .status.address.url
-  - name: Age
-    type: date
-    JSONPath: .metadata.creationTimestamp
 
 ---
 # Copyright 2019 The Knative Authors

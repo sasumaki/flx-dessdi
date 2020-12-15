@@ -1,12 +1,12 @@
----
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: GitRepository
-metadata:
-  name: strimzi
-  namespace: flux-system
-spec:
-  interval: 30m
-  ref:
-    tag: "0.20.0"
-  url: https://github.com/strimzi/strimzi-kafka-operator
+# ---
+# apiVersion: source.toolkit.fluxcd.io/v1beta1
+# kind: GitRepository
+# metadata:
+#   name: strimzi
+#   namespace: flux-system
+# spec:
+#   interval: 30m
+#   ref:
+#     tag: "0.20.0"
+#   url: https://github.com/strimzi/strimzi-kafka-operator
 

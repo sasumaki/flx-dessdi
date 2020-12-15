@@ -5,7 +5,7 @@ metadata:
   namespace: seldon-system
 
 spec:
-  broker: kafka-broker
+  broker: nats-broker
   filter:
     attributes:
       type: io.seldon.serving.inference.request
