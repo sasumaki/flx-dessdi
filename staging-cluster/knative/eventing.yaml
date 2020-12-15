@@ -8,8 +8,8 @@ spec:
   path: ./knative/eventing
   prune: true
   validation: client
-  dependsOn:
-    - name: knative-operator
+  # dependsOn:
+  #   - name: knative-operator
   sourceRef:
     kind: GitRepository
     name: flux-system
