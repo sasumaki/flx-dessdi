@@ -3,14 +3,14 @@ kind: Kustomization
  
 resources:
   - ./istio-third-party.yaml
+  - https://storage.googleapis.com/knative-nightly/eventing-kafka/latest/source.yaml
+  - ./kafka-channel-config.yaml
+  - ./kafka-config-map.yaml
+  - ./kafka-broker.yaml
   - ./seldon-knative-trigger.yaml
   - ./message-dump.yaml
   - ./channel.yaml
   - ./seldon-detect-trigger.yaml
   - ./seldon-meme-detector-trigger.yaml
   - ./cluster-role.yaml
-  - ./broker.yaml
-  - https://storage.googleapis.com/knative-nightly/eventing-kafka/latest/source.yaml
-  - ./kafka-channel-config.yaml
-  - ./kafka-config-map.yaml
-  - ./kafka-broker.yaml
+ 
