@@ -5,7 +5,7 @@ metadata:
   namespace: seldon-system
 
 spec:
-  broker: kafka-backed-broker
+  broker: default
   filter:
     attributes:
       type: seldon.detector.seldon-system.response
