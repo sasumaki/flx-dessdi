@@ -6,5 +6,6 @@ resources:
   # - ./kafka-config-map.yaml
   # - ./kafka-channel-config.yaml
   - ./eventing.yaml
+  - ./nats-eventing.yaml
   # - https://github.com/knative-sandbox/eventing-kafka-broker/releases/download/v0.19.0/eventing-kafka-controller.yaml
   # - https://github.com/knative-sandbox/eventing-kafka-broker/releases/download/v0.19.0/eventing-kafka-broker.yaml

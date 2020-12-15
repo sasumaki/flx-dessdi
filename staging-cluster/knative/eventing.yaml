@@ -8,8 +8,8 @@ spec:
   path: ./knative/eventing
   prune: true
   validation: client
-  # dependsOn:
-  #   - name: knative-operator
+  dependsOn:
+    - name: nats-streaming
   sourceRef:
     kind: GitRepository
     name: flux-system
