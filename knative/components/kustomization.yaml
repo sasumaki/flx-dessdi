@@ -4,8 +4,8 @@ kind: Kustomization
 resources:
   - ./istio-third-party.yaml
   - https://storage.googleapis.com/knative-nightly/eventing-kafka/latest/source.yaml
-  - ./kafka-channel-config.yaml
-  - ./kafka-config-map.yaml
+  # - ./kafka-channel-config.yaml
+  # - ./kafka-config-map.yaml
   - ./kafka-broker.yaml
   - ./seldon-knative-trigger.yaml
   - ./message-dump.yaml

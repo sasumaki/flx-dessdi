@@ -6,6 +6,8 @@ metadata:
 spec:
   defaultBrokerClass: MTChannelBasedBroker
   config:
+    kafka:
+     bootstrapServers: my-cluster-kafka-bootstrap.kafka:9092
     br-default-channel:
       channelTemplateSpec: |
         apiVersion: messaging.knative.dev/v1beta1
