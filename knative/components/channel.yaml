@@ -1,4 +1,4 @@
 apiVersion: messaging.knative.dev/v1beta1
-kind: NatssChannel
+kind: Channel
 metadata:
-  name: foo
+  name: channel
