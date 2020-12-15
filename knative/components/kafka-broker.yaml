@@ -1,8 +1,6 @@
 apiVersion: eventing.knative.dev/v1
 kind: Broker
 metadata:
-  annotations:
-    eventing.knative.dev/broker.class: MTChannelBasedBroker
   name: default
   namespace: seldon-system
 spec:
