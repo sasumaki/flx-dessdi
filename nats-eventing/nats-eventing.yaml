@@ -17,19 +17,19 @@ kind: ClusterRole
 metadata:
   name: natss-addressable-resolver
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
     duck.knative.dev/addressable: "true"
 # Do not use this role directly. These rules will be added to the "addressable-resolver" role.
 rules:
-- apiGroups:
-  - messaging.knative.dev
-  resources:
-  - natsschannels
-  - natsschannels/status
-  verbs:
-  - get
-  - list
-  - watch
+  - apiGroups:
+      - messaging.knative.dev
+    resources:
+      - natsschannels
+      - natsschannels/status
+    verbs:
+      - get
+      - list
+      - watch
 
 ---
 # Copyright 2019 The Knative Authors
@@ -51,22 +51,22 @@ kind: ClusterRole
 metadata:
   name: natss-channelable-manipulator
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
     duck.knative.dev/channelable: "true"
 # Do not use this role directly. These rules will be added to the "channelable-manipulator" role.
 rules:
-- apiGroups:
-  - messaging.knative.dev
-  resources:
-  - natsschannels
-  - natsschannels/status
-  verbs:
-  - create
-  - get
-  - list
-  - watch
-  - update
-  - patch
+  - apiGroups:
+      - messaging.knative.dev
+    resources:
+      - natsschannels
+      - natsschannels/status
+    verbs:
+      - create
+      - get
+      - list
+      - watch
+      - update
+      - patch
 
 ---
 # Copyright 2019 The Knative Authors
@@ -88,86 +88,86 @@ kind: ClusterRole
 metadata:
   name: natss-ch-controller
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
 rules:
-- apiGroups:
-  - messaging.knative.dev
-  resources:
-  - natsschannels
-  - natsschannels/status
-  verbs:
-  - get
-  - list
-  - watch
-  - update
-  - patch
-- apiGroups:
-  - messaging.knative.dev
-  resources:
-  - natsschannels/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - "" # Core API group.
-  resources:
-  - services
-  - configmaps
-  verbs:
-  - get
-  - list
-  - watch
-  - create
-- apiGroups:
-  - "" # Core API group.
-  resources:
-  - services
-  verbs:
-  - update
-- apiGroups:
-  - "" # Core API Group.
-  resources:
-  - events
-  verbs:
-  - create
-  - patch
-  - update
-- apiGroups:
-  - ""
-  resources:
-  - configmaps
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - "" # Core API group.
-  resources:
-  - endpoints
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - apps
-  resources:
-  - deployments
-  - deployments/status
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - "coordination.k8s.io"
-  resources:
-  - "leases"
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - delete
-  - patch
-  - watch
+  - apiGroups:
+      - messaging.knative.dev
+    resources:
+      - natsschannels
+      - natsschannels/status
+    verbs:
+      - get
+      - list
+      - watch
+      - update
+      - patch
+  - apiGroups:
+      - messaging.knative.dev
+    resources:
+      - natsschannels/finalizers
+    verbs:
+      - update
+  - apiGroups:
+      - "" # Core API group.
+    resources:
+      - services
+      - configmaps
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+  - apiGroups:
+      - "" # Core API group.
+    resources:
+      - services
+    verbs:
+      - update
+  - apiGroups:
+      - "" # Core API Group.
+    resources:
+      - events
+    verbs:
+      - create
+      - patch
+      - update
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - "" # Core API group.
+    resources:
+      - endpoints
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - apps
+    resources:
+      - deployments
+      - deployments/status
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - "coordination.k8s.io"
+    resources:
+      - "leases"
+    verbs:
+      - get
+      - list
+      - create
+      - update
+      - delete
+      - patch
+      - watch
 
 ---
 # Copyright 2019 The Knative Authors
@@ -189,43 +189,43 @@ kind: ClusterRole
 metadata:
   name: natss-ch-dispatcher
 rules:
-- apiGroups:
-  - messaging.knative.dev
-  resources:
-  - natsschannels
-  - natsschannels/status
-  verbs:
-  - get
-  - list
-  - watch
-  - update
-  - patch
-- apiGroups:
-  - messaging.knative.dev
-  resources:
-  - natsschannels/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - "" # Core API group.
-  resources:
-  - configmaps
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - "coordination.k8s.io"
-  resources:
-  - "leases"
-  verbs:
-  - get
-  - list
-  - create
-  - update
-  - delete
-  - patch
-  - watch
+  - apiGroups:
+      - messaging.knative.dev
+    resources:
+      - natsschannels
+      - natsschannels/status
+    verbs:
+      - get
+      - list
+      - watch
+      - update
+      - patch
+  - apiGroups:
+      - messaging.knative.dev
+    resources:
+      - natsschannels/finalizers
+    verbs:
+      - update
+  - apiGroups:
+      - "" # Core API group.
+    resources:
+      - configmaps
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - "coordination.k8s.io"
+    resources:
+      - "leases"
+    verbs:
+      - get
+      - list
+      - create
+      - update
+      - delete
+      - patch
+      - watch
 
 ---
 # Copyright 2019 The Knative Authors
@@ -248,7 +248,7 @@ metadata:
   name: natss-ch-dispatcher
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
     messaging.knative.dev/channel: natss-channel
     messaging.knative.dev/role: dispatcher
 spec:
@@ -256,10 +256,10 @@ spec:
     messaging.knative.dev/channel: natss-channel
     messaging.knative.dev/role: dispatcher
   ports:
-  - name: http-dispatcher
-    port: 80
-    protocol: TCP
-    targetPort: 8080
+    - name: http-dispatcher
+      port: 80
+      protocol: TCP
+      targetPort: 8080
 
 ---
 # Copyright 2019 The Knative Authors
@@ -282,7 +282,7 @@ metadata:
   name: natss-ch-controller
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -290,7 +290,85 @@ metadata:
   name: natss-ch-dispatcher
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
+
+---
+# Copyright 2019 The Knative Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: natss-webhook
+  labels:
+    natss.messaging.knative.dev/release: devel
+rules:
+  # For watching logging configuration and getting certs.
+  - apiGroups:
+      - ""
+    resources:
+      - "configmaps"
+    verbs:
+      - "get"
+      - "list"
+      - "watch"
+  # For manipulating certs into secrets.
+  - apiGroups:
+      - ""
+    resources:
+      - "secrets"
+      - "namespaces"
+    verbs:
+      - "get"
+      - "create"
+      - "update"
+      - "list"
+      - "watch"
+      - "patch"
+  # For getting our Deployment so we can decorate with ownerref.
+  - apiGroups:
+      - "apps"
+    resources:
+      - "deployments"
+    verbs:
+      - "get"
+  - apiGroups:
+      - "apps"
+    resources:
+      - "deployments/finalizers"
+    verbs:
+      - update
+  # For actually registering our webhook.
+  - apiGroups:
+      - "admissionregistration.k8s.io"
+    resources:
+      - "mutatingwebhookconfigurations"
+      - "validatingwebhookconfigurations"
+    verbs: &everything
+      - "get"
+      - "list"
+      - "create"
+      - "update"
+      - "delete"
+      - "patch"
+      - "watch"
+  # For leader election
+  - apiGroups:
+      - "coordination.k8s.io"
+    resources:
+      - "leases"
+    verbs: *everything
 
 ---
 # Copyright 2019 The Knative Authors
@@ -312,11 +390,11 @@ kind: ClusterRoleBinding
 metadata:
   name: natss-ch-controller
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
 subjects:
-- kind: ServiceAccount
-  name: natss-ch-controller
-  namespace: knative-eventing
+  - kind: ServiceAccount
+    name: natss-ch-controller
+    namespace: knative-eventing
 roleRef:
   kind: ClusterRole
   name: natss-ch-controller
@@ -327,12 +405,50 @@ kind: ClusterRoleBinding
 metadata:
   name: natss-ch-dispatcher
 subjects:
-- kind: ServiceAccount
-  name: natss-ch-dispatcher
-  namespace: knative-eventing
+  - kind: ServiceAccount
+    name: natss-ch-dispatcher
+    namespace: knative-eventing
 roleRef:
   kind: ClusterRole
   name: natss-ch-dispatcher
+  apiGroup: rbac.authorization.k8s.io
+
+---
+# Copyright 2020 The Knative Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: natss-webhook
+  namespace: knative-eventing
+  labels:
+    rabbitmq.eventing.knative.dev/release: devel
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: natss-webhook
+  labels:
+    rabbitmq.eventing.knative.dev/release: devel
+subjects:
+  - kind: ServiceAccount
+    name: natss-webhook
+    namespace: knative-eventing
+roleRef:
+  kind: ClusterRole
+  name: natss-webhook
   apiGroup: rbac.authorization.k8s.io
 
 ---
@@ -355,7 +471,7 @@ kind: CustomResourceDefinition
 metadata:
   name: natsschannels.messaging.knative.dev
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
     knative.dev/crd-install: "true"
     messaging.knative.dev/subscribable: "true"
     duck.knative.dev/addressable: "true"
@@ -367,23 +483,60 @@ spec:
     plural: natsschannels
     singular: natsschannel
     categories:
-    - all
-    - knative
-    - messaging
-    - channel
+      - all
+      - knative
+      - messaging
+      - channel
     shortNames:
-    - natssc
+      - natssc
   versions:
-  - name: v1beta1
-    served: true
-    storage: true
-    subresources:
-      status: {}
-    schema:
-      openAPIV3Schema:
-        type: object
-        # Workaround, existing schema is incomplete and fails validation.
-        x-kubernetes-preserve-unknown-fields: true
+    - name: v1beta1
+      served: true
+      storage: true
+      subresources:
+        status: {}
+      schema:
+        openAPIV3Schema:
+          type: object
+          # Workaround, existing schema is incomplete and fails validation.
+          x-kubernetes-preserve-unknown-fields: true
+      additionalPrinterColumns:
+        - name: Ready
+          type: string
+          jsonPath: ".status.conditions[?(@.type==\"Ready\")].status"
+        - name: Reason
+          type: string
+          jsonPath: ".status.conditions[?(@.type==\"Ready\")].reason"
+        - name: URL
+          type: string
+          jsonPath: .status.address.url
+        - name: Age
+          type: date
+          jsonPath: .metadata.creationTimestamp
+
+---
+# Copyright 2020 The Knative Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: natss-webhook-certs
+  namespace: knative-eventing
+  labels:
+    natss.messaging.knative.dev/release: devel
+# The data is populated at install time.
 
 ---
 # Copyright 2019 The Knative Authors
@@ -406,7 +559,7 @@ metadata:
   name: natss-ch-controller
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
 spec:
   replicas: 1
   selector:
@@ -419,31 +572,31 @@ spec:
     spec:
       serviceAccountName: natss-ch-controller
       containers:
-      - name: controller
-        image: gcr.io/knative-releases/knative.dev/eventing-natss/cmd/channel_controller@sha256:33446fe7dc2e53dad0a2c29a9a0772bea6c28960d6ae761eacec6342a4715e16
-        env:
-        - name: CONFIG_LOGGING_NAME
-          value: config-logging
-        - name: METRICS_DOMAIN
-          value: knative.dev/eventing
-        - name: SYSTEM_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        - name: POD_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.name
-        ports:
-        - containerPort: 9090
-          name: metrics
-        volumeMounts:
-        - name: config-logging
-          mountPath: /etc/config-logging
+        - name: controller
+          image: gcr.io/knative-nightly/knative.dev/eventing-natss/cmd/channel_controller@sha256:70d45ca9e334e762a699970b9ee8e8a8661e4f8f68cc3513c2583a4cb5ba7cc5
+          env:
+            - name: CONFIG_LOGGING_NAME
+              value: config-logging
+            - name: METRICS_DOMAIN
+              value: knative.dev/eventing
+            - name: SYSTEM_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          ports:
+            - containerPort: 9090
+              name: metrics
+          volumeMounts:
+            - name: config-logging
+              mountPath: /etc/config-logging
       volumes:
-      - name: config-logging
-        configMap:
-          name: config-logging
+        - name: config-logging
+          configMap:
+            name: config-logging
 
 ---
 # Copyright 2019 The Knative Authors
@@ -466,7 +619,7 @@ metadata:
   name: natss-ch-dispatcher
   namespace: knative-eventing
   labels:
-    natss.eventing.knative.dev/release: "v0.19.0"
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
 spec:
   replicas: 1
   selector:
@@ -479,32 +632,207 @@ spec:
     spec:
       serviceAccountName: natss-ch-dispatcher
       containers:
-      - name: dispatcher
-        image: gcr.io/knative-releases/knative.dev/eventing-natss/cmd/channel_dispatcher@sha256:2c9ec6d0778cbae79ea088d723128803ec37799aae5a2acc181a51ddbffd5c3e
-        env:
-        - name: CONFIG_LOGGING_NAME
-          value: config-logging
-        - name: METRICS_DOMAIN
-          value: knative.dev/eventing
-        - name: SYSTEM_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        - name: POD_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.name
-        - name: CONTAINER_NAME
-          value: dispatcher
-        ports:
-        - containerPort: 9090
-          name: metrics
-        volumeMounts:
-        - name: config-logging
-          mountPath: /etc/config-logging
+        - name: dispatcher
+          image: gcr.io/knative-nightly/knative.dev/eventing-natss/cmd/channel_dispatcher@sha256:f8639b6175e78db84b9f68f5866da00011a8be0fe969e807e79caed1a8da22b1
+          env:
+            - name: CONFIG_LOGGING_NAME
+              value: config-logging
+            - name: METRICS_DOMAIN
+              value: knative.dev/eventing
+            - name: SYSTEM_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: CONTAINER_NAME
+              value: dispatcher
+          ports:
+            - containerPort: 9090
+              name: metrics
+          volumeMounts:
+            - name: config-logging
+              mountPath: /etc/config-logging
       volumes:
-      - name: config-logging
-        configMap:
-          name: config-logging
+        - name: config-logging
+          configMap:
+            name: config-logging
+
+---
+# Copyright 2020 The Knative Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: webhook.natss.messaging.knative.dev
+  labels:
+    natss.messaging.knative.dev/release: devel
+webhooks:
+  - admissionReviewVersions: ["v1beta1"]
+    clientConfig:
+      service:
+        name: natss-webhook
+        namespace: knative-eventing
+    sideEffects: None
+    failurePolicy: Fail
+    name: webhook.natss.messaging.knative.dev
+    timeoutSeconds: 2
+
+---
+# Copyright 2020 The Knative Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: validation.webhook.natss.messaging.knative.dev
+  labels:
+    natss.messaging.knative.dev/release: devel
+webhooks:
+  - admissionReviewVersions: ["v1beta1"]
+    clientConfig:
+      service:
+        name: natss-webhook
+        namespace: knative-eventing
+    sideEffects: None
+    failurePolicy: Fail
+    name: validation.webhook.natss.messaging.knative.dev
+    timeoutSeconds: 2
+
+---
+# Copyright 2020 The Knative Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: natss-webhook
+  namespace: knative-eventing
+  labels:
+    natss.messaging.knative.dev/release: devel
+spec:
+  replicas: 1
+  selector:
+    matchLabels: &labels
+      app: natss-webhook
+      role: natss-webhook
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      # To avoid node becoming SPOF, spread our replicas to different nodes.
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: natss-webhook
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+      serviceAccountName: natss-webhook
+      containers:
+        - name: natss-webhook
+          terminationMessagePolicy: FallbackToLogsOnError
+          # This is the Go import path for the binary that is containerized
+          # and substituted here.
+          image: gcr.io/knative-nightly/knative.dev/eventing-natss/cmd/webhook@sha256:8dbe89cbb8a571cb281bb3ff8fc0b339c94ebb6bd7f8488149969a57ab6f7371
+          resources:
+            requests:
+              # taken from serving.
+              cpu: 20m
+              memory: 20Mi
+            limits:
+              # taken from serving.
+              cpu: 200m
+              memory: 200Mi
+          env:
+            - name: SYSTEM_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: CONFIG_LOGGING_NAME
+              value: config-logging
+            - name: METRICS_DOMAIN
+              value: knative.dev/channels
+            - name: WEBHOOK_NAME
+              value: natss-webhook
+            - name: WEBHOOK_PORT
+              value: "8443"
+          securityContext:
+            allowPrivilegeEscalation: false
+          ports:
+            - name: https-webhook
+              containerPort: 8443
+            - name: metrics
+              containerPort: 9090
+            - name: profiling
+              containerPort: 8008
+          readinessProbe: &probe
+            periodSeconds: 1
+            httpGet:
+              scheme: HTTPS
+              port: 8443
+              httpHeaders:
+                - name: k-kubelet-probe
+                  value: "webhook"
+          livenessProbe:
+            !!merge <<: *probe
+            initialDelaySeconds: 20
+      # Our webhook should gracefully terminate by lame ducking first, set this to a sufficiently
+      # high value that we respect whatever value it has configured for the lame duck grace period.
+      terminationGracePeriodSeconds: 300
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    natss.eventing.knative.dev/release: "v20201215-5ef3e892"
+    role: natss-webhook
+  name: natss-webhook
+  namespace: knative-eventing
+spec:
+  ports:
+    - name: https-webhook
+      port: 443
+      targetPort: 8443
+  selector:
+    role: natss-webhook
 
 ---
