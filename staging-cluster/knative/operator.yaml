@@ -4,7 +4,7 @@ metadata:
   name: knative-operator
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 30m
   path: ./knative
   prune: true
   validation: client
