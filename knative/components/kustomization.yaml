@@ -11,6 +11,6 @@ resources:
   - ./cluster-role.yaml
   - ./broker.yaml
   - https://storage.googleapis.com/knative-nightly/eventing-kafka/latest/source.yaml
-  - https://storage.googleapis.com/knative-nightly/eventing-kafka/latest/channel-consolidated.yaml
+  - ./kafka-channel-config.yaml
   - ./kafka-config-map.yaml
   - ./kafka-broker.yaml
