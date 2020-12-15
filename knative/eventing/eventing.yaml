@@ -4,8 +4,8 @@ metadata:
   name: knative-eventing
   namespace: knative-eventing
 spec:
+  defaultBrokerClass: MTChannelBasedBroker
   config:
-    defaultBrokerClass: MTChannelBasedBroker
     br-default-channel:
       channelTemplateSpec: |
         apiVersion: messaging.knative.dev/v1beta1
