@@ -4,4 +4,4 @@ metadata:
   name: knative-eventing
   namespace: knative-eventing
 spec:
-  defaultBrokerClass: MTChannelBasedBroker
+  defaultBrokerClass: Kafka
