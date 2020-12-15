@@ -3,5 +3,3 @@ kind: Kustomization
 
 resources:
   - kafka.yaml
-  - https://github.com/knative-sandbox/eventing-kafka-broker/releases/download/v0.19.0/eventing-kafka-controller.yaml
-  - https://github.com/knative-sandbox/eventing-kafka-broker/releases/download/v0.19.0/eventing-kafka-broker.yaml
