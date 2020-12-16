@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-natss-channel
+  namespace: natss
+  labels:
+    eventing.knative.dev/release: devel
+data:
+  channelTemplateSpec: |
+    apiVersion: messaging.knative.dev/v1beta1
+    kind: NatssChannel

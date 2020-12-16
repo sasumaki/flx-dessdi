@@ -6,10 +6,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./config/broker
+  path: ./nats-eventing
   prune: true
   sourceRef:
     kind: GitRepository
-    name: natss
+    name: flux-system
   validation: client
 
