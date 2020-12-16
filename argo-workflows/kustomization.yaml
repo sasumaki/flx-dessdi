@@ -7,3 +7,4 @@ resources:
   - workflow-role.yaml
   - rbac.yaml
   - config-map.yaml
+  
