@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - https://github.com/argoproj/argo-events/manifests/namespace-install
   - event-bus.yaml
+  - webhook.yaml
   - sensor.yaml
-  - nats-event-source.yaml
   
