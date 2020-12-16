@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"strconv"
 
 	cloudevents "github.com/cloudevents/sdk-go/v2"
 )
@@ -38,25 +39,36 @@ Data,
     },
 */
 
-type clouddata struct {
-	data struct {
-		names  []string
-		tensor struct {
-			shape  []int
-			values []int
-		}
-	}
+// CloudData is dada
+type CloudData struct {
+	Data struct {
+		Names  []interface{} `json:"names"`
+		Tensor struct {
+			Shape  []int `json:"shape"`
+			Values []int `json:"values"`
+		} `json:"tensor"`
+	} `json:"data"`
+	Meta struct {
+		Tags struct {
+			ModelURI     string `json:"model_uri"`
+			ModelVersion string `json:"model_version"`
+		} `json:"tags"`
+	} `json:"meta"`
 }
 
 func display(event cloudevents.Event) {
-	var JSONAsInterface clouddata
+	var DataJSON CloudData
 
 	fmt.Printf("☁️  cloudevents.Event\n%s", event.String())
 	dada := event.Data()
 	fmt.Println(dada)
-	if err := json.Unmarshal(dada, &JSONAsInterface); err != nil {
-		fmt.Println(JSONAsInterface.data.tensor.values[0])
+
+	err := json.Unmarshal(dada, &DataJSON)
+	if err != nil {
+		fmt.Println(err)
 	}
+	fmt.Println(strconv.Itoa(DataJSON.Data.Tensor.Values[0]))
+
 }
 
 func main() {
