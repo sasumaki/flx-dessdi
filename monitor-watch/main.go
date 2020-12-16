@@ -1,11 +1,12 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
 	"log"
-	"strconv"
+	"net/http"
 
 	cloudevents "github.com/cloudevents/sdk-go/v2"
 )
@@ -56,6 +57,11 @@ type CloudData struct {
 	} `json:"meta"`
 }
 
+// Payload for trigger message
+type Payload struct {
+	Message string `json:"message"`
+}
+
 func display(event cloudevents.Event) {
 	var DataJSON CloudData
 
@@ -67,8 +73,31 @@ func display(event cloudevents.Event) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(strconv.Itoa(DataJSON.Data.Tensor.Values[0]))
+	retrainTriggered := DataJSON.Data.Tensor.Values[0] == 1
+	fmt.Println(retrainTriggered)
+	if retrainTriggered {
 
+		data := Payload{
+			// fill struct
+		}
+		payloadBytes, err := json.Marshal(data)
+		if err != nil {
+			// handle err
+		}
+		body := bytes.NewReader(payloadBytes)
+
+		req, err := http.NewRequest("POST", "http://webhook-eventsource-svc.argo/retrain", body)
+		if err != nil {
+			// handle err
+		}
+		req.Header.Set("Content-Type", "application/json")
+
+		resp, err := http.DefaultClient.Do(req)
+		if err != nil {
+			// handle err
+		}
+		defer resp.Body.Close()
+	}
 }
 
 func main() {
