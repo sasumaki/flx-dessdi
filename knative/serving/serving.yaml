@@ -1,4 +1,5 @@
 
+# TODO: get rid of knative-serving. Shouldn't be needed.
 apiVersion: operator.knative.dev/v1alpha1
 kind: KnativeServing
 metadata:

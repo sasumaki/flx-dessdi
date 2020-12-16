@@ -11,5 +11,5 @@ resources:
   - ./seldon-detect-trigger.yaml
   - ./seldon-meme-detector-trigger.yaml
   - ./cluster-role.yaml
-  - ./catch-all-trigger.yaml
+  # - ./catch-all-trigger.yaml
  
