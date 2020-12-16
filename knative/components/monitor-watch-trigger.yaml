@@ -1,0 +1,17 @@
+apiVersion: eventing.knative.dev/v1beta1
+kind: Trigger
+metadata:
+  name: detector-to-monitor-watch
+  namespace: seldon-system
+
+spec:
+  broker: nats-broker2
+  filter:
+    attributes:
+      type: seldon.detector.seldon-system.response
+      source: seldon.detector
+  subscriber:
+    ref:
+      apiVersion: v1
+      kind: Service
+      name: monitor-watch
