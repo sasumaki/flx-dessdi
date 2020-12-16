@@ -87,7 +87,7 @@ func display(event cloudevents.Event) {
 		}
 		body := bytes.NewReader(payloadBytes)
 
-		req, err := http.NewRequest("POST", "http://webhook-eventsource-svc.argo/retrain", body)
+		req, err := http.NewRequest("POST", "http://webhook-eventsource-svc.argo:12000/retrain", body)
 		if err != nil {
 			fmt.Println(err)
 			return
