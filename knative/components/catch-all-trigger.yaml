@@ -1,7 +1,7 @@
 apiVersion: eventing.knative.dev/v1beta1
 kind: Trigger
 metadata:
-  name: event-meme-detector-display
+  name: catch-all-trigger
   namespace: seldon-system
 
 spec:
