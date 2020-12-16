@@ -12,5 +12,6 @@ resources:
   - ./seldon-meme-detector-trigger.yaml
   - ./cluster-role.yaml
   - ./monitor-watcher.yaml
+  - ./monitor-watch-trigger.yaml
   # - ./catch-all-trigger.yaml
  
