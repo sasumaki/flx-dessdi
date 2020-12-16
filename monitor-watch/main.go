@@ -65,9 +65,8 @@ type Payload struct {
 func display(event cloudevents.Event) {
 	var DataJSON CloudData
 
-	fmt.Printf("☁️  cloudevents.Event\n%s", event.String())
+	// fmt.Printf("☁️  cloudevents.Event\n%s", event.String())
 	dada := event.Data()
-	fmt.Println(dada)
 
 	err := json.Unmarshal(dada, &DataJSON)
 	if err != nil {
@@ -76,25 +75,29 @@ func display(event cloudevents.Event) {
 	retrainTriggered := DataJSON.Data.Tensor.Values[0] == 1
 	fmt.Println(retrainTriggered)
 	if retrainTriggered {
+		fmt.Println("Triggering retrain")
 
 		data := Payload{
-			// fill struct
+			Message: "retrain",
 		}
 		payloadBytes, err := json.Marshal(data)
 		if err != nil {
-			// handle err
+			fmt.Println(err)
+			return
 		}
 		body := bytes.NewReader(payloadBytes)
 
 		req, err := http.NewRequest("POST", "http://webhook-eventsource-svc.argo/retrain", body)
 		if err != nil {
-			// handle err
+			fmt.Println(err)
+			return
 		}
 		req.Header.Set("Content-Type", "application/json")
 
 		resp, err := http.DefaultClient.Do(req)
 		if err != nil {
-			// handle err
+			fmt.Println(err)
+			return
 		}
 		defer resp.Body.Close()
 	}

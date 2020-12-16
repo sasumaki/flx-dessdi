@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: monitor-watch
-          image: sasumaki/monitor-watch:2
+          image: sasumaki/monitor-watch:3
 ---
 # Service that exposes event-display app.
 # This will be the subscriber for the Trigger
