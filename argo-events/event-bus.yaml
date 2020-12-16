@@ -6,4 +6,4 @@ spec:
   nats:
     exotic:
       url: nats://nats-streaming.natss.svc:4222
-      clusterID: nats-streaming
+      clusterID: knative-nats-streaming
