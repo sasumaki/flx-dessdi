@@ -20,7 +20,6 @@ spec:
           template: git-commit
           arguments:
             parameters:
-            # Pass the hello-param output from the generate-parameter step as the message input to print-message
             - name: S3_MODEL_URI
               value: "{{steps.train.outputs.parameters.S3_MODEL_URI}}"
 
@@ -28,8 +27,7 @@ spec:
   - name: training
     container:
       image: sasumaki/mnist-train
-      command: [python, train.py]
-    
+      command: [python, train.py] 
     inputs:
       artifacts:
       - name: data
@@ -44,8 +42,6 @@ spec:
           secretKeySecret:
             name: aws-secret
             key: AWS_SECRET_ACCESS_KEY
-    
-
     outputs:
       parameters:
         - name: S3_MODEL_URI
@@ -101,13 +97,11 @@ spec:
         mountPath: "/root/.ssh"
       source: |
         cd /src
-        ls -la
         echo "MODEL_URI={{inputs.parameters.S3_MODEL_URI}}" > manifests/environment.properties
         cat manifests/environment.properties
         git config --global user.email "workflow-bot@example.com"
         git config --global user.name "Argo Workflows"
         git add -A
-        git status
         git commit -m "bump model uri"
 
         ls -la /

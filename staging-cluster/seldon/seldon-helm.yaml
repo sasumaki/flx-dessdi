@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: seldonio
         namespace: flux-system
-  interval: 10m0s
+  interval: 120m0s
   values:
     istio:
       enabled: true
