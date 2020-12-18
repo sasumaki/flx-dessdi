@@ -5,7 +5,7 @@ metadata:
   name: argo
   namespace: flux-system
 spec:
-  interval: 30m0s
+  interval: 1000m0s
   path: ./manifests/namespace-install
   prune: true
   sourceRef:
